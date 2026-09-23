@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 22px;
+    border: 1px solid;
+    margin-bottom: 16px;}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.inicio{
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: start;
+    padding: 72px 24px;
+}
+.sombrancelha{
+    color: #006c74;
+    font-size: 0.88rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+}
+.subtitulo{
+    color: #7083ac;
+}
+.textoInicial h1{
+    font-size: 3rem;
+    line-height: 1.05;
+    margin:0 0 20px;}
+
+nav{
+    display: flex;
+    gap: 28px;
+}
+

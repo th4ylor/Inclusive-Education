@@ -4,13 +4,18 @@
 body{
     padding: 22px;
     border: 1px solid;
-    margin-bottom: 16px;}
+    margin-bottom: 16px;
+    background:radial-gradient(60% 45% at 78% 8%, rgba(59, 146, 246, 0.16), transparent 60%),
+    #0d1220;
+    color: #f7f8fb;}
 
 header{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
+
 .inicio{
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -26,11 +31,40 @@ header{
 }
 .subtitulo{
     color: #7083ac;
+    font-size: 1.05em;
+    max-width: 46ch;
 }
 .textoInicial h1{
     font-size: 3rem;
     line-height: 1.05;
-    margin:0 0 20px;}
+    margin:0 0 20px;
+}
+.btn-prim, .btn-sec{
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 10px 25px;
+    cursor: pointer;}
+.btn-prim{
+    background:linear-gradient(135deg, #3bf66a, #22adee);
+    color: #ffff;}
+.btn-sec{
+    background: rgba(255, 255, 255, 0.05);
+    color: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.10);}
+
+
+.init-card{
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 1.25rem;
+    backdrop-filter: blur(14px);}
+.init-card .big{
+    font-size: 2.4rem;
+    font-weight: 700;
+    display: block;}
+
 
 nav{
     display: flex;

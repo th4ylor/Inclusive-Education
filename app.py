@@ -1,25 +1,16 @@
-from flask import Flask, request, render_template
+from flask import Flask, render_template
+from auth import fazer_login
 
 app = Flask(__name__)
 
+#Inicia o site logo pela pagina de inicio: index.html
 @app.route("/")
 def inicio():
     return render_template("index.html")
 
+#Carrega a pagina de login ou os comandos para login caso seja um POST do Form
 @app.route("/login", methods=["POST", "GET"])
 def login():
-    
-    if request.method == "GET":
-        return render_template("login.html")
-    
-    usuario = request.form["name"]
-    senha = request.form["pass"]
-    return render_template(
-        "login.html",
-        user = "Usuario recebido: "+ usuario,
-        senha = "Senha recebida: "+ senha
-    )
-
-
+    return fazer_login()
 
 app.run(debug=True)

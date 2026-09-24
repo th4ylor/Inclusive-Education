@@ -3,14 +3,16 @@ body{
     color: #ffff;
 }
 
+body *{
+    box-sizing: border-box;
+}
 .mainLogin{
     width: 100vw;
     height: 100vh;
     background: #1f2038;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
+    align-items: center;}
 
 .leftLogin{
     width: 50vw;
@@ -18,15 +20,14 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
+    align-items: center;}
+
 .rigthLogin{
     width: 50vw;
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
+    align-items: center;}
 
 .cardLogin{
     width: 50%;
@@ -37,8 +38,7 @@ body{
     padding: 30px 35px;
     background: #2f2441;
     border-radius: 20px;
-    box-shadow: 0px 10px 40px #00000075;
-}
+    box-shadow: 0px 10px 40px #00000075;}
 .cardLogin >h1{
     color: wheat;
     font-weight: 800;
@@ -63,16 +63,12 @@ body{
     box-shadow: 0px 10px 40px #00000075;
     outline: none;
     box-sizing: border-box;}
-
 .textField >label{
     color: #ffff;
-    margin-bottom: 15px;
-}
-
+    margin-bottom: 15px;}
 .textField >input::placeholder{
     color: #ffffff2d;
-    font-size: 10pt;
-}
+    font-size: 10pt;}
 
 .btnLogin{
     width: 80%;
@@ -88,9 +84,28 @@ body{
     color: #1f2038;
     background:#20b634;
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #023609;
-}
+    box-shadow: 0px 10px 40px -12px #023609;}
 
-.animated{
-    transform: scale(0.8);
-}
+@media only screen and (max-width: 950px){
+    .cardLogin{
+        width: 85%;}}
+
+@media only screen and (max-width: 600px){
+    .mainLogin{
+        flex-direction: column;}
+
+    .leftLogin h1{
+        display: none;}
+    .leftLogin{
+        width: 100%;
+        height: auto;}
+    .rigthLogin{
+        width: 100%;
+        height: auto;}
+    .leftLogin >svg{
+        width: 50vw;;}
+    .cardLogin{
+        width: 90%;
+    }}
+    
+    

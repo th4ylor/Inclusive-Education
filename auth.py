@@ -1,8 +1,6 @@
 from flask import request, render_template
 
 def fazer_login():
-    if request.method == "GET":
-        return render_template("login.html")
     
     #Recebe os comandos digitado no input do Form
     user = request.form["name"]

@@ -6,7 +6,9 @@
 
 body {
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100vh;
+    width: 100vw;}
 
 h2 {
     font-size: 32px;
@@ -14,8 +16,12 @@ h2 {
     margin-bottom: 20px;
     font-weight: 700;}
 
+button {
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
 .container {
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     background-color: #242424;
 
@@ -24,12 +30,9 @@ h2 {
     justify-content: center;}
 
 .card {
-    width: 70%;
-    max-width: 900px;
-    min-height: 600px;
-
-    background-color: rgba(34, 76, 153, 0.726);
-    border-radius: 32px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(30, 38, 54, 0.726);
     padding: 30px;
 
     display: flex;
@@ -55,7 +58,7 @@ form {
 input,button {
     width: 320px;
     padding: 12px 20px;
-
+    
     border-radius: 12px;
     border: none;
     outline: none;
@@ -65,13 +68,14 @@ input,button {
 button {
     margin-top: 8px;
     font-weight: 700;
-
+    
     background: linear-gradient(
         90deg,
         #968FF9 0%,
         #f1d3f9 100%
     );
     cursor: pointer;}
+    
 
 p {
     width: 320px;
@@ -81,6 +85,7 @@ p {
 input{
     color: rgba(255, 255, 255, .9);
     background: rgba(255, 255, 255, .1);}
+    
 
 input::placeholder{
     color: rgba(255, 255, 255, .5);}
@@ -96,6 +101,7 @@ input::placeholder{
 button{
     background-color: rgba(255,255,255 , .8);
     border: 1px solid rgba(0,0,0, .8);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 }
 
@@ -107,11 +113,12 @@ button{
 
 .card.LoginActive .facaCadastro{
     transform: translateX(0);
-    transition: all .5s .3;
+    transition: all .5s .2s;
+    opacity: 1;
 }
 
 .card.LoginActive .formLogin{
-    transition: all .5s .3;
+    transition: all .5s .3s;
     opacity: 1;
 }
 .card.LoginActive .formCadastro{
@@ -138,25 +145,44 @@ button{
 .card.CadastroActive .facaCadastro{
     opacity: 0;
     pointer-events: none;}
-
 .card.CadastroActive .formLogin{
     opacity: 0;
     pointer-events: none;}
-
-
 .card.CadastroActive::after{
     transform:translateX(-50%);}
 
-/*Animação de transição do login/cadastro*/
-.card::after{
-    transition: all .5s;
-}
-.facaCadastro{
-    transition: all .5s 0;
-    transform: translateX(200%);
+.card.CadastroActive .facaLogin{
+    transform: translateX(0);
+    transition: all .5s .2s;
     opacity: 1;
 }
+
+.card.CadastroActive .formCadastro{
+    transition: all .5s .3s;
+    opacity: 1;
+}
+
+
+/*Animação de transição do login/cadastro*/
+.card::after{
+    transition: all .5s;}
+.facaCadastro{
+    transition: all .3s 0;
+    transform: translateX(200%);
+    opacity: 0;}
 .formLogin{
     opacity: 0;
-    transition: all .5s .3;
-}
+    transition: all .5s .3;}
+
+.facaLogin{
+    transition: all .3s 0;
+    transform: translateX(-200%);
+    opacity: 0;}
+.formCadastro{
+    opacity: 0;
+    transition: all .5s .3;}
+
+
+    
+
+

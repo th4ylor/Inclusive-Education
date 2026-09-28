@@ -100,11 +100,20 @@ button{
 }
 
 
-/*Cadastro Active*/
+/*Login Active*/
 .card.LoginActive .facaLogin{
     opacity: 0;
     pointer-events: none;}
 
+.card.LoginActive .facaCadastro{
+    transform: translateX(0);
+    transition: all .5s .3;
+}
+
+.card.LoginActive .formLogin{
+    transition: all .5s .3;
+    opacity: 1;
+}
 .card.LoginActive .formCadastro{
     opacity: 0;
     pointer-events: none;}
@@ -137,3 +146,17 @@ button{
 
 .card.CadastroActive::after{
     transform:translateX(-50%);}
+
+/*Animação de transição do login/cadastro*/
+.card::after{
+    transition: all .5s;
+}
+.facaCadastro{
+    transition: all .5s 0;
+    transform: translateX(200%);
+    opacity: 1;
+}
+.formLogin{
+    opacity: 0;
+    transition: all .5s .3;
+}

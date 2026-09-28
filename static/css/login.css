@@ -1,111 +1,162 @@
-body{
+* {
+    padding: 0;
     margin: 0;
-    color: #ffff;
-}
-
-body *{
     box-sizing: border-box;
-}
-.mainLogin{
-    width: 100vw;
-    height: 100vh;
-    background: #1f2038;
-    display: flex;
-    justify-content: center;
-    align-items: center;}
+    font-weight: 400;}
 
-.leftLogin{
-    width: 50vw;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;}
+body {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
 
-.rigthLogin{
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;}
+h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;}
 
-.cardLogin{
-    width: 50%;
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #242424;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+
+.card {
+    width: 70%;
+    max-width: 900px;
+    min-height: 600px;
+
+    background-color: rgba(34, 76, 153, 0.726);
+    border-radius: 32px;
+    padding: 30px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 30px 35px;
-    background: #2f2441;
-    border-radius: 20px;
-    box-shadow: 0px 10px 40px #00000075;}
-.cardLogin >h1{
-    color: wheat;
-    font-weight: 800;
-    margin: 0;}
+    overflow: hidden;
+    position: relative;}
 
+.esquerda,.direita {
+    width: 50%;
 
-.textField{
-    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-    margin: 10px 0px;}
-.textField >input{
+    align-items: center;
+    z-index: 1;}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;}
+
+input,button {
+    width: 320px;
+    padding: 12px 20px;
+
+    border-radius: 12px;
+    border: none;
+    outline: none;
+
+    font-size: 16px;}
+
+button {
+    margin-top: 8px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        90deg,
+        #968FF9 0%,
+        #f1d3f9 100%
+    );
+    cursor: pointer;}
+
+p {
+    width: 320px;
+    margin-bottom: 24px;
+    text-align: center;}
+
+input{
+    color: rgba(255, 255, 255, .9);
+    background: rgba(255, 255, 255, .1);}
+
+input::placeholder{
+    color: rgba(255, 255, 255, .5);}
+
+
+
+.facaLogin, .facaCadastro{
+    position: absolute;
+    h2, p{
+        color: rgba(0,0,0 , 0.8);
+    }
+
+button{
+    background-color: rgba(255,255,255 , .8);
+    border: 1px solid rgba(0,0,0, .8);
+}
+}
+
+
+/*Login Active*/
+.card.LoginActive .facaLogin{
+    opacity: 0;
+    pointer-events: none;}
+
+.card.LoginActive .facaCadastro{
+    transform: translateX(0);
+    transition: all .5s .3;
+}
+
+.card.LoginActive .formLogin{
+    transition: all .5s .3;
+    opacity: 1;
+}
+.card.LoginActive .formCadastro{
+    opacity: 0;
+    pointer-events: none;}
+
+.card::after{
     width: 100%;
-    border: none;
-    border-radius: 10ex;
-    padding: 15px;
-    background: #392e4b ;
-    color: #ffff;
-    font-size: 12pt;
-    box-shadow: 0px 10px 40px #00000075;
-    outline: none;
-    box-sizing: border-box;}
-.textField >label{
-    color: #ffff;
-    margin-bottom: 15px;}
-.textField >input::placeholder{
-    color: #ffffff2d;
-    font-size: 10pt;}
+    height: 100%;
+    content: "";
+    background-image: url(../img/loginBG.jpg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;}
 
-.btnLogin{
-    width: 80%;
-    padding: 16px 0px;
-    margin: 25px auto;
-    display: block;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: #1f2038;
-    background:#20b634;
-    cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #023609;}
+.card.LoginActive::after{
+    transform:translateX(50%);}
 
-@media only screen and (max-width: 950px){
-    .cardLogin{
-        width: 85%;}}
 
-@media only screen and (max-width: 600px){
-    .mainLogin{
-        flex-direction: column;}
+/*Cadastro Active*/
+.card.CadastroActive .facaCadastro{
+    opacity: 0;
+    pointer-events: none;}
 
-    .leftLogin h1{
-        display: none;}
-    .leftLogin{
-        width: 100%;
-        height: auto;}
-    .rigthLogin{
-        width: 100%;
-        height: auto;}
-    .leftLogin >svg{
-        width: 50vw;;}
-    .cardLogin{
-        width: 90%;
-    }}
-    
-    
+.card.CadastroActive .formLogin{
+    opacity: 0;
+    pointer-events: none;}
+
+
+.card.CadastroActive::after{
+    transform:translateX(-50%);}
+
+/*Animação de transição do login/cadastro*/
+.card::after{
+    transition: all .5s;
+}
+.facaCadastro{
+    transition: all .5s 0;
+    transform: translateX(200%);
+    opacity: 1;
+}
+.formLogin{
+    opacity: 0;
+    transition: all .5s .3;
+}

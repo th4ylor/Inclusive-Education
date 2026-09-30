@@ -13,9 +13,9 @@
             <div class="esquerda">
                 <div class="formLogin">
                     <h2>Fazer Login</h2>
-                    <form action="">
-                        <input type="text" placeholder="E-Mail">
-                        <input type="password" placeholder="Senha">
+                    <form action="/login" method="post">
+                        <input type="text" id="email" name="email" placeholder="E-Mail">
+                        <input type="password" id="pass" name="pass" placeholder="Senha">
                         <button class="Botao" type="submit">Entrar</button>
                     </form>
                 </div>
@@ -28,11 +28,11 @@
             <div class="direita">
                 <div class="formCadastro">
                     <h2>Cadastro</h2>
-                    <form action="">
-                        <input type="text" placeholder="Nome">
-                        <input type="text" placeholder="E-Mail">
-                        <input type="password" placeholder="Senha">
-                        <input type="password" placeholder="Confirme a sua senha">
+                    <form action="/cadastro" method="post">
+                        <input type="text" name="nome" placeholder="Nome">
+                        <input type="text" name="email" placeholder="E-Mail">
+                        <input type="password" name="senha" placeholder="Senha">
+                        <input type="password" name="confSenha" placeholder="Confirme sua senha">
                         <button class="Botao" type="submit">Cadastrar</button>
                     </form>
                 </div>

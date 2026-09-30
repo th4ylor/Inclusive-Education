@@ -8,11 +8,13 @@ app = Flask(__name__)
 def inicio():
     return render_template("index.html")
 
-#Carrega a pagina de login ou os comandos para login caso seja um POST do Form
-@app.route("/login", methods=["POST", "GET"])
-def login():
-    if request.method == "GET":
-            return render_template("login.html")
+#Carrega a pagina de login
+@app.route("/loginPage", methods=["GET"])
+def loginPage():
+    return render_template("login.html")
+
+@app.route("/login", methods=["POST"])
+def loginAuth():
     return fazer_login()
 
 app.run(debug=True)

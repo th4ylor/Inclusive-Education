@@ -119,15 +119,18 @@ def fazerCadastro():
             "INSERT INTO usuarios (nome, email, senha_hash) VALUES (?, ?, ?)",
             (name, email, hashSenha))
         conn.commit()
+        print("Conta adicionada ao banco de dados")
         
     #Erro que acontece quando o email ja existe
     except sqlite3.IntegrityError:
+        print("Este r-mail já está cadastrado.")
         flash("Este r-mail já está cadastrado.", "erro")
         return redirect(url_for("loginPage"))
     finally:
         conn.close()
-        
+        print("Cadastro realizado! Agora faça o login.")
     flash("Cadastro realizado! Agora faça o login.", "sucesso")
     return redirect(url_for("loginPage"))
+    
         
     

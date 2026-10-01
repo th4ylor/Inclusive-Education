@@ -136,3 +136,25 @@ h1{
 .flip:hover .flipInner, .flip:focus-visible .flipInner, .flip.virado .flipInner{
     transform: rotateY(180deg);
 }
+
+.face{
+    position: absolute;
+    inset: 0;
+    padding: 20px;
+    display: flex;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    background: var(--vidro);
+    backdrop-filter: blur(14px);
+}
+.Verso{
+    transform: rotateY(180deg);}
+.face small{
+    font-size: .7rem;
+    letter-spacing: .15em;
+    color: var(--azul);
+}

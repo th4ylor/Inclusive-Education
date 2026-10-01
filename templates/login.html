@@ -10,13 +10,13 @@
 <body>
     <section class="container">
 
-        {% with mensagens = get_flashed_messages(with_categories=true)%}
-        {%for categoria,msg in mensagens%}
-            <p class="msg {{categoria}}">{{msg}} </p>
-        {% endfor %}
-        {% endwith %}
+            {% with mensagens = get_flashed_messages(with_categories=true)%}
+                {%for categoria,msg in mensagens%}
+                    <p class="msg {{categoria}}">{{msg}} </p>
+                {% endfor %}
+            {% endwith %}
 
-        <div class="card LoginActive">
+        <div class="card CadastroActive">
             <div class="esquerda">
                 <div class="formLogin">
                     <h2>Fazer Login</h2>

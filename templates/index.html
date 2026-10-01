@@ -5,33 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina teste</title>
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <a class="logo" href="#">
+            <span class="logoIcon"> </span>
+            <span> <strong>Sensus Flow</strong> <small>Educação Inclusiva</small> </span>
+        </a> 
+
         <nav class="navbar">
             <a href="#inicio">inicio</a>
-            <a href="">Sobre nois</a>
-            <a href="">Alguma coisa</a>
+            <a href="#">Metodologias</a>
+            <a href="#">Alguma coisa</a>
         </nav>
+        <a class="btnEntrar" href="#">Entrar</a>
     </header>
 
-    <section id="inicio" class="inicio">
+    <main class="hero">
+        <section id="inicio" class="inicio">
         
-        <div class="textoInicial">
-            <p class="sombrancelha">ORGANIZADOR DE TAREFAS</p>
-            <h1>Quando tudo parece demais,<br> encontre o seu fluxo.</h1>
-            <p class="subtitulo">Transforme o que você precisa estudar em um plano que realmente cabe no seu dia.<br> Com tempo para focar, respirar e continuar.</p>
+            <div class="textoInicial">
+                <span class="selo"><i></i>Feito para mentes neurodivergentes</span>
+                <h1>Quando tudo parecer demais,<span class="grad"> encontre o seu fluxo.</span></h1>
+                <p class="subtitulo">Transforme o que você precisa estudar em um plano que realmente cabe no seu dia.<br> Com tempo para focar, respirar e continuar.</p>
+        
+                <div class="botoes">
+                    <button class="btn-prim" onclick="window.location.href='/loginPage'" >Comece agora</button>
+                    <button class="btn-sec">Saiba mais</button>
+                </div>
+            </div>
+        </section>
+        
+    <!--O flashcard tem 2 divs, cada div é um lado, aparece 1 lado por vez-->
+        <div class="flip" id="flashcard" tabindex="0" >
+            <div class="flipInner">
+
+                <div class="faceFrente">
+                    <small>PERGUNTA . BIOLOGIA</small>
+                    <h3>Qual a função principal da mitocôndia?</h3>
+                    <span class="dica">Passe o mouse para virar -></span>
+                </div>
+                <div class="faceVerso">
+                    <small>RESPOSTA</small>
+                    <h3> Produzir energia (ATP) através da respiração celular.</h3>
+                    <span class="dica"><-Passe o mouse para voltar</span>
+                </div>
             
-            <div class="botoes">
-                <button class="btn-prim" onclick="window.location.href='/loginPage'" >Comece agora</button>
-                <button class="btn-sec">Saiba mais</button>
             </div>
         </div>
-        
-        <div class="init-card">
-            <p>Painel de hoje</p>
-            <span class="big">15%</span>
-        </div>
+    </main>
+
+    <section class="cards">
+        <!--Card ilustrativo do metodo Pomodoro-->
+        <article class="card">
+            <h2>Foco guiado . Pomodoro</h2>
+            <div class="linha">
+                <span class="tempo" id="tempo">25:00</span>
+                <span class="ciclos" id="ciclos">0 / 4 ciclos</span>
+            </div>
+            <div class="barra"><div id="progresso"></div></div>
+            <div class="botoes">
+                <button class="claro" id="btnPausar">Iniciar</button>
+                <button id="btnPular">Pular</button>
+            </div>
+        </article>
+
+        <!--Card ilustrativo dos checklists-->
+        <article class="card">
+            <h2>Metas de hoje . visiveis</h2>
+            <ul class="metas" id="metas">
+                <li><label>
+                        <input type="checkbox" data-min="10">
+                        <span>Ler capítulo 3</span>
+                </label></li>
+
+                <li><label>
+                        <input type="checkbox" data-min="15">
+                        <span>12 flash cards</span>
+                </label></li>
+
+                <li><label>
+                        <input type="checkbox" data-min="15">
+                        <span>Escrever resumo</span>
+                </label></li>
+
+                <li><label>
+                        <input type="checkbox" data-min="10">
+                        <span>Revisar conteudo</span>
+                </label></li>
+            </ul>
+            <p class="resumo" id="resumo"></p>
+        </article>
+
+        <!--Card ilustrativo de recompensas, so pra encher linguiça por enquanto-->
+        <article class="card">
+            <h2>Recompensas</h2>
+            <div class="Linha">
+                <div class="medalha">$</div>
+                <div class="premio">
+                    <strong>Sequencia de 7 dias</strong>
+                    <small>+120 XP . proximo: Nivel 4</small>
+                </div>
+            </div>
+            <div class="semana" id="semana"></div>
+        </article>
+
     </section>
+    <script src="../static/js/init.js"></script>
 </body>
 </html>

@@ -180,6 +180,7 @@ input::placeholder{
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
+    box-shadow: 7px 8px 22px rgba(0, 0, 0, 0.233);
     z-index: 1;}
 .msg.show{
     transform: translate(-50%, 0);

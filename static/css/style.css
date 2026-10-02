@@ -68,6 +68,7 @@ nav a:hover, nav .ativo{color:var(--texto);}
 .hero{
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
+    max-width: 1200px;
     gap: 48px;
     align-items: center;
     padding: 72px 24px 40px;
@@ -120,6 +121,21 @@ h1{
 .btn-sec{
     background: var(--vidro);
     border: 1px solid var(--borda);}
+.btnEntrar{
+    color: var(--suave);
+    padding: 10px 28px 10px;
+    border-radius: var(--raio);
+    border: .6px solid var(--borda);
+    background-image: linear-gradient(135deg, var(--azul), var(--ouro));
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    transition: all .2s ease;
+    font-size: 12px;}
+.btnEntrar:hover{
+    transition: all .2s ease;
+    color: white;
+    transform: scale(1.1);
+    background-size: 100% 100%;}
 
 
 
@@ -284,8 +300,52 @@ h1{
     place-items: center;
     border-radius: 18px;
     font-size: 2rem;
-    background: linear-gradient(135deg, var(--ouro), var(--rosa));}
+    background: linear-gradient(135deg, var(--ouro), var(--verde));}
 .premio small{
     display: block;
     font-size: 0.75rem;
     color: var(--suave);}
+.semana{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 24px;
+    text-align: center;
+    font-size: 0.65rem;
+    color: var(--suave);}
+.semana span{
+    display: grid;
+    justify-items: center;
+    gap: 8px;}
+.semana i{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #394063;}
+.semana .feito{
+    background: var(--verde);}
+.semana .hoje{
+    color: var(--ouro);}
+.semana .hoje i{
+    background: var(--ouro);}
+
+.cardx{
+    padding: 24px;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    background: var(--vidro);
+}
+
+
+
+
+
+/*Responsividade mais ou menos*/
+@media (max-width: 860px){
+    .hero {grid-template-columns: 1fr;
+    padding-top: 30px;}
+    nav{
+        display: none;}
+}
+@media (prefers-reduced-motion: reduce){
+    *{transition: none !important}
+}

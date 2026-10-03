@@ -39,7 +39,7 @@ a{
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    max-width: 1200px;
+    max-width: 90vw;
     margin: 0 auto;
     padding: 20px 24px;}
 .logo{
@@ -67,13 +67,13 @@ nav a:hover, nav .ativo{color:var(--texto);}
 .hero{
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
-    max-width: 1200px;
+    max-width: 80vw;
     gap: 48px;
     align-items: center;
     padding: 72px 24px 40px;
     margin: 0 auto;}
 .hero p{
-    max-width: 460px;
+    max-width: 25vw;
     margin: 24px 0 32px;
     color: var(--suave);}
 .selo{
@@ -182,7 +182,7 @@ h1{
 
 /*Cards de exemplo*/
 .cards{
-    max-width: 1200px;
+    max-width: 80vw;
     margin: 0 auto;
     padding: 0 24px 80px;
     display: grid;
@@ -350,6 +350,11 @@ h1{
     z-index: 7;}
 
 /*Parte de metodologias*/
+.metodologias{
+    display: grid;
+    margin: 0 auto;
+    max-width: 80vw;
+    align-items: center;}
 .cabeca{
     margin-top: 10px;
     color: var(--suave);}
@@ -397,20 +402,19 @@ h1{
     line-height: 1.3;}
 .metodo p{
     font-size: 0,9rem;
-    color: var(--suave);
-}
+    color: var(--suave);}
 
 .topo{
     display: flex;justify-content: space-between;
     align-items: center;}
 .icone{
-    width: 02px;
-    height: 50px;
+    width: 44px;
+    height: 40px;
     display: grid;
     place-items: center;
     border-radius: 18px;
-    font-size: 1.6rem;
-    background: linear-gradient(135deg, var(--azul), rgba(255,255,255,0.1));}
+    font-size: 0.9rem;
+    background: linear-gradient(135deg, rgba(0, 85, 254, 0.609)), rgba(255,255,255,0.1);}
 .tag{
     padding: 4px 12px;
     border: 1px solid var(--azul);
@@ -441,14 +445,53 @@ summary{
     justify-content: space-between;
     align-items:center;
     font-size: 0.85rem;
-    font-weight: 600;}
-summary::webkit-details-marker{ display: none;}
-summary::after{
-    content: "";
-    font-size: 1.4rem;
-    line-height: 1;
-    transition: all .2s;}
+    font-weight: 600;
+    color: #4da3ff;}
+ol{
+    margin-top: 14px;
+    padding-left: 20px;
+    display: grid;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--suave);
+    li::marker{
+        color: rgb(131, 235, 157);
+        font-weight: 700;}}
 
+
+/* Parte da sugestao de rotina*/
+.rotina{
+    margin-top: 60px;
+    padding: 30px 25px;
+    text-align: center;
+    background: var(--vidro);
+    border: 1px solid var(--borda);
+    border-radius: 55px;
+    h2{
+        font-size: 1rem;}
+    p{
+        margin-top: 10px;
+        color: var(--suave);
+        font-size: 0.85rem;}}
+.passos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    span{
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: 1px solid var(--borda);
+        transition: all 0.3s;
+        background: linear-gradient(90deg, rgba(190, 77, 243, 0.202) , rgba(84, 166, 247, 0.202)) ;
+        font-size: 0.85rem;
+        cursor: pointer;}
+     span:hover{
+        transform: translateY(-20%) scale(1.04);
+        transition: all 0.3s;
+    }}
 
 
 /*Responsividade mais ou menos*/

@@ -67,7 +67,7 @@ nav a:hover, nav .ativo{color:var(--texto);}
 .hero{
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
-    max-width: 1200px;
+    max-width: 80vw;
     gap: 48px;
     align-items: center;
     padding: 72px 24px 40px;
@@ -76,6 +76,12 @@ nav a:hover, nav .ativo{color:var(--texto);}
     max-width: 460px;
     margin: 24px 0 32px;
     color: var(--suave);}
+
+.metodologias{
+    margin: 0 auto;
+    width: 80vw;
+}
+
 .selo{
     display: inline-flex;
     align-items: center;
@@ -459,7 +465,9 @@ summary::after{
     justify-content: center;
     overflow: hidden;
     height: 100vh;
+    margin: 0 auto;
 }
+
 
 .arrows{
     width: 95%;
@@ -554,7 +562,6 @@ section .lista .item .car-img img{
 .carrocel h2{
     font-size: 3rem;
     line-height: 1em;
-    font-family: "League Gothic", sans-serif;
 }
 .carrocel .description{
     color: #d9d9d9d9;
@@ -569,10 +576,9 @@ section .lista .item .car-img img{
     text-transform: uppercase;
     border: 2px solid #660ebd;
     background-color: #beff1b;
-    color: black;
+    color: white;
     cursor: pointer;
     font-weight: bold;
-    font-family: "League Gothic", sans-serif;
 }
 
 
@@ -602,7 +608,6 @@ section .lista::before{
 
 section .indicators .number{
     font-size: 5sem;
-    font-family: "League Gothic", sans-serif;
 }
 section .indicators ul{
     display: flex;

@@ -502,24 +502,31 @@ ol{
 
 /* Sessao Sobre*/
 .sobre{
+    margin-top: 10%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     height: 100vh;
-    margin: 0 auto;
 }
 
 
 .arrows{
-    width: 95%;
+    width: 90%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-between;
+}
+.titsobre{
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    font-size: 1.15rem;
 }
 
 .arrows button{
@@ -547,9 +554,9 @@ ol{
 }
 
 .lista{
-    width: 100%;
+    width: 95%;
     height: 100%;
-    margin: auto;
+    margin: 0 auto;
     position: relative;
 }
 
@@ -558,7 +565,7 @@ section .lista .item{
     inset: 0;
 }
 
-section .lista .item .car-img{
+.pss-img{
     position: absolute;
 
     top: 35%;
@@ -566,7 +573,7 @@ section .lista .item .car-img{
     width: 60%;
 }
 
-section .lista .item .car-img::before{
+.pss-img::before{
     content: '';
     display: none;
     position: absolute;
@@ -581,7 +588,7 @@ section .lista .item .car-img::before{
 
 }
 
-section .lista .item .car-img img{
+.pss-img img{
     width: 100%;
     transform: rotate(0deg);
 }
@@ -599,7 +606,7 @@ section .lista .item .car-img img{
     gap: 20px;
 }
 
-.carrocel .car-information{
+.pss-information{
     font-weight: bold ;
 }
 .carrocel h2{
@@ -677,7 +684,7 @@ section .lista .item{
     opacity: 0;
 }
 
-section .lista .item .car-img{
+.pss-img{
     transform: rotate(0);
     transition: 0.5s;
     transition-delay: 0.3s;
@@ -686,7 +693,7 @@ section .lista .item .car-img{
 
 
 .carrocel,
-section .lista .item .car-information,
+.pss-information,
 section .lista .item h2,
 section .lista .item .description,
 section .lista .item .information {
@@ -719,7 +726,7 @@ section .lista .item.active {
     opacity: 1;
 }
 .carrocel,
-section .lista .item.active .car-information,
+.pss-information,
 section .lista .item.active h2,
 section .lista .item.active .description,
 section .lista .item.active .information {
@@ -727,7 +734,7 @@ section .lista .item.active .information {
     opacity: 1;
 }
 
-section .lista .item.active .car-img{
+.pss-img{
     transform: rotate(-20deg);
     opacity: 1;
 }

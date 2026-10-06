@@ -25,20 +25,35 @@
         </section>
 
         <main class="hero">
-            <section class="flip" id="flashcard" tabindex="0" >
-                <div class="flipInner">
 
-                    <div class="face Frente">
-                        <small>PERGUNTA . BIOLOGIA</small>
-                        <h3>Qual a função principal da mitocôndia?</h3>
-                        <span class="dica">Passe o mouse para virar -></span>
+            <section >
+                <article class="flip" id="flashcard" tabindex="0" >
+                    <div class="flipInner">
+                        <div class="face Frente">
+                            <small>PERGUNTA</small>
+                            <h3>Qual a função principal da mitocôndia?</h3>
+                            <span class="dica">Passe o mouse para virar -></span>
+                        </div>
+                        <div class="face Verso">
+                            <small>RESPOSTA</small>
+                            <h3> Produzir energia (ATP) através da respiração celular.</h3>
+                            <span class="dica"><-Passe o mouse para voltar</span>
+                        </div>
                     </div>
-                    <div class="face Verso">
-                        <small>RESPOSTA</small>
-                        <h3> Produzir energia (ATP) através da respiração celular.</h3>
-                        <span class="dica"><-Passe o mouse para voltar</span>
+                </article>
+
+                <article class="cards">
+                    <div class="card Acerto">
+                        <p>Acertei pae</p>
                     </div>
-                </div>
+                    <div class="card Quase">
+                        <p>Vish quase</p>
+                    </div>
+                    <div class="card Erro">
+                        <p>Errei fei</p>
+                    </div>
+                </article>
+
             </section>
 
             <section class="box">
@@ -61,14 +76,16 @@
                 </section>
 
                 <section class="newFlash">
-                    <h1>Novo FlashCard</h1>
-                    <label for="materia">Matéria</label>
-                    <input type="text" name="materia" required placeholder="Ex: Matemática">
-                    <label for="pergunta">Pergunta</label>
-                    <input type="text" name="pergunta" required placeholder="Oque voce quer lembrar?">
-                    <label for="resposta">Resposta</label>
-                    <input type="text" name="resposta" required placeholder="Resposta curta">
-                    <button type="submit">Adicionar card</button>
+                    <form action="">
+                        <h1>Novo FlashCard</h1>
+                        <label for="materia">Matéria:</label>
+                        <input type="text" name="materia" required placeholder="Ex: Matemática">
+                        <label for="pergunta">Pergunta:</label>
+                        <input type="text" name="pergunta" required placeholder="Oque voce quer lembrar?">
+                        <label for="resposta">Resposta:</label>
+                        <input type="text" name="resposta" required placeholder="Resposta curta">
+                        <button type="submit">Adicionar card</button>
+                    </form>
                 </section>
 
             </section>

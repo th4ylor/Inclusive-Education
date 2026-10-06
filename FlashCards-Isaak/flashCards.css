@@ -176,10 +176,11 @@ h2{
     border-radius: var(--raio);
     bottom: 20px;}
 .sessao h1{
-    font-size: 1.15rem;
-    font-weight: 800;}
+    font-size: 1.05rem;
+    letter-spacing: .05rem;
+}
 .sessao h3{
-    font-size: 1.15rem;}
+    font-size: 1.7rem;}
 .sessao article{
     margin-top: 5%;
     text-align: center;
@@ -194,18 +195,67 @@ h2{
 
 .newFlash{
     display: grid;
-    margin: 0 auto;
-    padding: 15px 25px;
+    margin-top: 20px;
+    padding: 28px;
     width: 100%;
     border: 1px solid var(--borda);
     background: var(--vidro);
-    border-radius: var(--raio);
-    bottom: 20px;}
+    border-radius: var(--raio);}
 .newFlash input{
     padding: 12px 14px;
+    font-size: .80rem;
+    letter-spacing: .03rem;
     border: none;
+    width: 100%;
+    outline: none;
+    color: var(--texto);
+    box-sizing: border-box;
+    border-radius: 14px;
+    background: var(--vidro);
+    border: 1px solid var(--borda);}
+.newFlash input::placeholder{
+    font-size: .75rem;}
+
+.newFlash label{
+    font-weight: 500;
+    font-size: .75rem;
+    color: var(--suave);}
+.newFlash h1{
+    color: var(--texto);
+    margin: 0 0 6px;
+    font-size: 1.3rem;
+    font-weight: 800;}
+.newFlash button{
+    padding: 12px;
+    border-radius: 14px;
+    width:100%;
+    color: #ffffff;
+    margin-top: 15px;
+    cursor: pointer;
+    background: linear-gradient(125deg, #21ff9494,#aa00f8);
 }
 
-
+.cards{
+    margin-top: 13px;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.card{
+    border-radius: var(--raio);
+    background: var(--vidro);
+    border: 1px solid var(--borda);
+    min-height: 90px;
+    padding: 20px 50px;
+    width: 100%;}
+.Acerto{
+    background: rgba(24, 255, 3, 0.06);
+    border: 1px solid #006a0b;}
+.Quase{
+    background: rgba(188, 255, 3, 0.06);
+    border: 1px solid #709d00;}
+.Erro{
+    background: rgba(255, 3, 3, 0.06);
+    border: 1px solid #9d0000;}
 
 

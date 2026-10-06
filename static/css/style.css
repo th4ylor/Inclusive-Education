@@ -17,7 +17,6 @@
 body{
     font-family: 'Poppins', system-ui, sans-serif;
     padding: 22px;
-    border: 1px solid;
     margin-bottom: 16px;
     background:radial-gradient(60% 45% at 78% 8%, rgba(59, 146, 246, 0.16), transparent 60%),
     #0d1220;
@@ -86,7 +85,7 @@ nav a:hover, nav .ativo{color:var(--texto);}
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 24px;
+    margin-top: 24px;
     padding: 5px 14px;
     border: 1px solid var(--borda);
     border-radius: 999px;

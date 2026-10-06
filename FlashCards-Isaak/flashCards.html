@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="flashCards.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="#" class="logo">
+            <span><strong>Sensus Flow</strong><small>Educação Inclusiva</small></span>
+        </a>
+        <button  class="btnEntrar"> Sair </button>
+    </header>
+
+        <section id="inicio" class="inicio">
+        
+            <div class="textoInicial">
+                <span class="selo">Sala de estudos</span>
+                <h2>Pergunte,vire,<span class="grad">fixe.</span></h2>
+                
+                <p class="subtitulo">Transforme o que você precisa estudar em um plano que realmente cabe no seu dia.<br> Com tempo para focar, respirar e continuar.</p>
+            </div>
+        </section>
+
+        <main class="hero">
+            <section class="flip" id="flashcard" tabindex="0" >
+                <div class="flipInner">
+
+                    <div class="face Frente">
+                        <small>PERGUNTA . BIOLOGIA</small>
+                        <h3>Qual a função principal da mitocôndia?</h3>
+                        <span class="dica">Passe o mouse para virar -></span>
+                    </div>
+                    <div class="face Verso">
+                        <small>RESPOSTA</small>
+                        <h3> Produzir energia (ATP) através da respiração celular.</h3>
+                        <span class="dica"><-Passe o mouse para voltar</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="box">
+                <section class="sessao" >
+                    <h1>Nesta sessão</h1>
+                    <article>
+                        <div class="acertos">
+                            <h3>0</h3>
+                            <small>Acertos</small>
+                        </div>
+                        <div class="quase">
+                            <h3>1</h3>
+                            <small>Quase</small>
+                        </div>
+                        <div class="erros">
+                            <h3>2</h3>
+                            <small>Erros</small>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="newFlash">
+                    <h1>Novo FlashCard</h1>
+                    <label for="materia">Matéria</label>
+                    <input type="text" name="materia" required placeholder="Ex: Matemática">
+                    <label for="pergunta">Pergunta</label>
+                    <input type="text" name="pergunta" required placeholder="Oque voce quer lembrar?">
+                    <label for="resposta">Resposta</label>
+                    <input type="text" name="resposta" required placeholder="Resposta curta">
+                    <button type="submit">Adicionar card</button>
+                </section>
+
+            </section>
+
+        </main>
+</body>
+</html>

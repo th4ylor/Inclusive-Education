@@ -17,8 +17,10 @@ body{
     font-family: 'Poppins', system-ui, sans-serif;
     padding: 22px;
     margin-bottom: 16px;
-    background:radial-gradient(60% 45% at 78% 8%, rgba(59, 146, 246, 0.16), transparent 60%),
-    #0d1220;
+    background:
+    radial-gradient(70% 50% at 80% 5%,rgba(255, 147, 147, 0.18),transparent 65%),
+    radial-gradient(60% 50% at 15% 90%, rgba(145, 98, 255, 0.12),transparent 65%),
+    radial-gradient(50% 40% at 50% 50%, rgba(40, 230, 255, 0.05),transparent 70%),#000000;
     color: var(--texto);
     min-height: 100vh;}
 header{
@@ -66,6 +68,7 @@ nav a:hover, nav .ativo{color:var(--texto);}
     background-image: linear-gradient(215deg, rgba(255, 8, 8, 0.798), rgba(0, 255, 255, 0.568));
     background-size: 0% 100%;
     cursor: pointer;
+    color: black;
     background-repeat: no-repeat;
     transition: all .2s ease;
     font-size: 12px;}
@@ -80,15 +83,14 @@ nav a:hover, nav .ativo{color:var(--texto);}
 /*Parte do texto*/
 .inicio{
     display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
     max-width: 80vw;
     gap: 48px;
     align-items: center;
-    padding: 72px 24px 40px;
+    padding: 22px 24px 20px;
     margin: 0 auto;}
 .inicio p{
-    max-width: 25vw;
-    margin: 24px 0 32px;
+    max-width: 30vw;
+    margin: 20px 0 30px;
     color: var(--suave);}
 .selo{
     display: inline-flex;
@@ -134,6 +136,7 @@ h2{
     transition:  .7s;
     height: 100%;
     width: 100%;
+    
 }
 .flip:hover .flipInner, .flip:focus-visible .flipInner, .flip.virado .flipInner{
     transform: rotateY(180deg);
@@ -147,8 +150,12 @@ h2{
     flex-direction: column;
     justify-content: space-between;
     border-radius: var(--raio);
-    border: 1px solid var(--borda);
-    background: var(--vidro);
+
+    background: linear-gradient(135deg, #08580c23 , #02210d25);
+    border: 1px solid #007a1e6a;
+    box-shadow:
+        0 0 5px #35ff6870
+    
 }
 .Verso{
     transform: rotateY(180deg);}
@@ -232,11 +239,12 @@ h2{
     color: #ffffff;
     margin-top: 15px;
     cursor: pointer;
-    background: linear-gradient(125deg, #21ff9494,#aa00f8);
+    text-shadow: 1px 2px 6px black;
+    background: linear-gradient(125deg, #78ffbe94,#d176fb);
 }
 
 .cards{
-    margin-top: 13px;
+    margin-top: 20px;
     gap: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -246,16 +254,54 @@ h2{
     background: var(--vidro);
     border: 1px solid var(--borda);
     min-height: 90px;
-    padding: 20px 50px;
-    width: 100%;}
-.Acerto{
-    background: rgba(24, 255, 3, 0.06);
-    border: 1px solid #006a0b;}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: .75rem;
+    width: 100%;
+}
+.Acerto {
+    background: rgba(100, 255, 86, 0.063);
+    border: 1px solid #35ff6898;
+    box-shadow:
+        0 0 5px #35ff6872,
+        0 0 10px rgba(53, 255, 104, 0.374),
+        0 0 20px rgba(53, 255, 104, 0.191);}
 .Quase{
     background: rgba(188, 255, 3, 0.06);
-    border: 1px solid #709d00;}
+        box-shadow:
+        0 0 5px #ffda357b,
+        0 0 10px rgba(231, 255, 53, 0.407),
+        0 0 20px rgba(255, 201, 53, 0.274);
+    border: 1px solid #ffd50092;}
 .Erro{
     background: rgba(255, 3, 3, 0.06);
-    border: 1px solid #9d0000;}
+        box-shadow:
+        0 0 5px #ff353583,
+        0 0 10px rgba(255, 53, 53, 0.372),
+        0 0 20px rgba(255, 53, 53, 0.4);
+    border: 1px solid #ff00007a;}
 
+.cardaut{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    padding: 20px;
+    border-radius: var(--raio);
+    background: var(--vidro);
+}
 
+.cardaut button{
+    padding: 12px;
+    border-radius: 14px;
+    width:100%;
+    font-size: .75rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all .3s;
+    background: linear-gradient(125deg, #ff212194,#004af8);}
+.cardaut button:hover{
+    transform: scale(1.03);
+    transition: all .3s;}

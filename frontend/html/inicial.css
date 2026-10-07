@@ -1,80 +1,128 @@
+/* -------- posicionamento de imagem -------- */
+header {
+    position: relative;
+}
+
 /* mexendo no fundo da pagina*/
+
 body {
-    box-sizing: border-box;
-    background-color: rgb(2, 26, 34);
+    background-color: rgb(1, 16, 24);
+    margin: 0;
 }
 
-/* colocando uma caixa ao redor da pagina*/
-.titulo_1{
-            background-color: rgb(173, 230, 173);
-            margin: 10px;
-            padding: 20px;
-            min-height: 100vh;
-            box-sizing: border-box;
+/* -------- titulo1 -------- */
+
+.titulo h1 {
+    margin-left: 15px;
+    margin-top: 25px;
+    font-size: 30px;
+    color:  rgb(216, 190, 190);
 }
 
-/*estou colocando as duas box lado a lado*/
-.esquerda_direita{
-            display: flex; 
-            gap: 5px;
+.titulo p {
+    margin-left: 15px;
+    margin-top: 15px;
+    color: rgb(216, 9, 9);
+    font-size: 55px;
 }
 
-.caixa_cronometro, .caixa_metodologias{
-            width: 300px;
-            height: 300px;
-            background-color: rgb(173, 230, 173);
-            border: 2px solid navy;
-            font-size : 16px;
-            flex: 1;
-            
-            border-radius: 20px;
+.titulo h2 {
+    margin-left: 15px;
+    place-items: center;
+    margin-top: 25px;
+    font-size: 20px;
+    color:  rgb(216, 190, 190);
+}
+
+.checklist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 70px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.checklist button {
+    border-radius: 20px;
+    background-color:  #7dcae6;
+    border: 3px solid rgb(55, 8, 226);
+}
+
+.checklist h1,
+.checklist h2,
+.checklist h3 {
+    font-size: 25px;
+}
+
+/* ------ imagem e dark mode ------- */
+
+.imagens_lateral {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+.olhos button, .usuario button {
+    border: none;
+    background-color: rgb(31, 123, 172);
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid rgb(176, 163, 223);
+}
+
+.olhos img, .usuario img {
+    width: 25px;
+    padding: 15px;
+    background-color: rgb(31, 123, 172);
+    border-radius: 20px;
+}
+
+/* -------- titulo 2 -------- */
+
+.titulo_2 {
+    margin-left: 15px;
+    margin-top: 50px;
+    font-size: 25px;
+    color:  rgb(216, 190, 190);
+}
+
+/* -------- BOX -------- */
+
+.botoes_estudo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 180px);
+    gap: 20px;
+    margin-left: 10px;
+    margin-right: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+}
+
+.botoes_estudo button {
+    background-color: #7dcae6;
+    border-radius: 20px;
+    border-color: rgb(209, 196, 255);
+    border: 3px solid rgb(55, 8, 226);
 
 }
 
-/* criando um checklist*/
-.Tarefas {
-            width: 90%;
-            height: 300px;
-            background-color: lightblue;
-            border: 2px solid navy;
-            padding: 20px;
-            margin: 10px;
-            font-size : 16px;
-            border-radius: 20px;
+.botoes_estudo h1,
+.botoes_estudo h2,
+.botoes_estudo h3,
+.botoes_estudo h4,
+.botoes_estudo h5,
+.botoes_estudo h6{
+    font-size: 25px;
+    color: #111111;
 }
 
-.tarefa1{
-            width: 90%;
-            height: 50px;
-            background-color: rgb(173, 230, 173);
-            border: 2px solid navy;
-            border-radius: 20px;
-            margin: 10px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-}
-
-.tarefa2{
-            width: 90%;
-            height: 50px;
-            background-color: rgb(173, 230, 173);
-            border: 2px solid navy;
-            border-radius: 20px;
-            margin: 10px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-}
-
-.tarefa3{
-            width: 90%;
-            height: 50px;
-            background-color: rgb(173, 230, 173);
-            border: 2px solid navy;
-            border-radius: 20px;
-            margin: 10px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
+.botoes_estudo p {
+    font-size: 20px;
+    color: #363636;
+>>>>>>> ec69d07 (ajustei a pagina inicial)
 }

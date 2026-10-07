@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="flashCards.css">
+    <script src="flashCards.js"></script>
 </head>
 <body>
     <header class="topbar">
@@ -29,16 +30,18 @@
             <section >
                 <article class="flip" id="flashcard" tabindex="0" >
                     <div class="flipInner">
-                        <div class="face Frente">
-                            <small>PERGUNTA</small>
-                            <h3>Qual a função principal da mitocôndia?</h3>
+                        <ul id="listCards" class="face Frente">
+                            <li><small>PERGUNTA</small></li>
+                            <li>
+                                <h3>Qual a função principal da mitocôndia?</h3>
+                            </li>
                             <span class="dica">Passe o mouse para virar -></span>
-                        </div>
-                        <div class="face Verso">
-                            <small>RESPOSTA</small>
-                            <h3> Produzir energia (ATP) através da respiração celular.</h3>
-                            <span class="dica"><-Passe o mouse para voltar</span>
-                        </div>
+                        </ul>
+                        <ul id="listCards" class="face Verso">
+                            <li><small>RESPOSTA</small></li>
+                            <li><h3> Produzir energia (ATP) através da respiração celular.</h3></li>
+                            <li><span class="dica"><-Passe o mouse para voltar</span></li>
+                        </ul>
                     </div>
                 </article>
 
@@ -80,14 +83,14 @@
                 </section>
 
                 <section class="newFlash">
-                    <form action="">
+                    <form id="formCard" action="">
                         <h1>Novo FlashCard</h1>
                         <label for="materia">Matéria:</label>
-                        <input type="text" name="materia" required placeholder="Ex: Matemática">
+                        <input type="text" name="materia" id="materia" required placeholder="Ex: Matemática">
                         <label for="pergunta">Pergunta:</label>
-                        <input type="text" name="pergunta" required placeholder="Oque voce quer lembrar?">
+                        <input type="text" name="pergunta" id="pergunta" required placeholder="Oque voce quer lembrar?">
                         <label for="resposta">Resposta:</label>
-                        <input type="text" name="resposta" required placeholder="Resposta curta">
+                        <input type="text" name="resposta" id="resposta" required placeholder="Resposta curta">
                         <button type="submit">Adicionar card</button>
                     </form>
                 </section>

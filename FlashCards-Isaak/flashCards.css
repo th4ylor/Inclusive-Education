@@ -150,12 +150,11 @@ h2{
     flex-direction: column;
     justify-content: space-between;
     border-radius: var(--raio);
-
+    list-style-type: none;
     background: linear-gradient(135deg, #08580c23 , #02210d25);
     border: 1px solid #007a1e6a;
     box-shadow:
-        0 0 5px #35ff6870
-    
+        0 0 5px #35ff6870;
 }
 .Verso{
     transform: rotateY(180deg);}

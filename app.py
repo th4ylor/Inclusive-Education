@@ -30,6 +30,3 @@ def loginAuth():
 def registerAuth():
     print("Entrou na funcao para fazer cadastro")
     return fazerCadastro()
-
-
-app.run(debug=True)

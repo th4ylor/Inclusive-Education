@@ -4,7 +4,7 @@ from db import createTable
 
 app = Flask(__name__)
 
-app.config["SECRET_KEY"] = "capscoy17"
+app.config["SECRET_KEY"] = "chaveExpostadePropositoPorEnquanto"
 
 createTable()
 

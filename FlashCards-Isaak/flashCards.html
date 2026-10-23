@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="flashCards.css">
-    <script src="flashCards.js"></script>
 </head>
 <body>
     <header class="topbar">
@@ -29,25 +28,23 @@
 
             <section >
                 <article class="flip" id="flashcard" tabindex="0" >
-                    <div class="flipInner">
-                        <ul id="listCards" class="face Frente">
-                            <li><small>PERGUNTA</small></li>
-                            <li>
-                                <h3>Qual a função principal da mitocôndia?</h3>
-                            </li>
+                    <div id="listCards" class="flipInner">
+                        <div class="face Frente">
+                            <small>PERGUNTA</small>
+                                <h3 id="perguntaC">Qual a função principal da mitocôndia?</h3>
                             <span class="dica">Passe o mouse para virar -></span>
-                        </ul>
-                        <ul id="listCards" class="face Verso">
-                            <li><small>RESPOSTA</small></li>
-                            <li><h3> Produzir energia (ATP) através da respiração celular.</h3></li>
-                            <li><span class="dica"><-Passe o mouse para voltar</span></li>
-                        </ul>
+                        </div>
+                        <div class="face Verso">
+                            <small>RESPOSTA</small>
+                            <h3 id="respostaC"> Produzir energia (ATP) através da respiração celular.</h3>
+                            <span class="dica"><-Passe o mouse para voltar</span>
+                        </div>
                     </div>
                 </article>
 
                 <article class="cards">
                     <div class="card Acerto">
-                        <p>Acertei pae</p>
+                        <button type="button" id="acerto">Acertei pae</button>
                     </div>
                     <div class="card Quase">
                         <p>Vish quase</p>
@@ -83,10 +80,10 @@
                 </section>
 
                 <section class="newFlash">
-                    <form id="formCard" action="">
+                    <form id="formCard" action="" method="post">
                         <h1>Novo FlashCard</h1>
                         <label for="materia">Matéria:</label>
-                        <input type="text" name="materia" id="materia" required placeholder="Ex: Matemática">
+                        <input type="text" name="materia" id="materia" placeholder="Ex: Matemática">
                         <label for="pergunta">Pergunta:</label>
                         <input type="text" name="pergunta" id="pergunta" required placeholder="Oque voce quer lembrar?">
                         <label for="resposta">Resposta:</label>
@@ -98,5 +95,7 @@
             </section>
 
         </main>
+
+        <script src="flashCards.js"></script>
 </body>
 </html>

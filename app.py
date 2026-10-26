@@ -30,3 +30,15 @@ def loginAuth():
 def registerAuth():
     print("Entrou na funcao para fazer cadastro")
     return fazerCadastro()
+
+@app.route("/flashPage", methods=["GET"])
+def flashPage():
+    print("Entrar na flashPage OK")
+    return render_template("home/flashCards.html")
+
+@app.route("/Painel", methods=["GET"])
+def Painel():
+    return render_template("home/inicial.html")
+    
+
+app.run(debug=True)

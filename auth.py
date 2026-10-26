@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 def criar_tabela():
-    conexao = sqlite3.connect("meu_banco.db")
+    conexao = sqlite3.connect("Banco.db")
     cursor = conexao.cursor()
 
     cursor.execute("""
@@ -24,7 +24,7 @@ def fazer_login():
     email = request.form["email"].strip().lower() #strip e lower é para caso o usuario colocar maisculo e espaço
     senha = request.form["pass"]
 
-    conexao = sqlite3.connect("meu_banco.db")
+    conexao = sqlite3.connect("Banco.db")
     cursor = conexao.cursor()
 
     cursor.execute(
@@ -39,7 +39,7 @@ def fazer_login():
         return redirect(url_for("loginPage"))
 
 #gurdando a senha hash numa variavel
-    senha_guardada = resultado[1]  #é 1 pois na posicao 1 está a senha guardada em hash ja na posicao 0  é o id
+    senha_guardada = resultado[1]  #é 2 pois na posicao 2 está a senha guardada em hash ja na posicao 0  é o id
 #senha guardade = senha hash
 
 #aqui serve para se caso o email estiver correto mas a senha não esta batendo
@@ -50,7 +50,7 @@ def fazer_login():
 
     session["usuario_id"] = resultado[0]   # guarda quem está logado, o 0 aqui é para o id, se for 1  é para senha hash
     flash("Login aceito")
-    return redirect(url_for("home"))
+    return redirect(url_for("Painel"))
 
 #Isaak depois  vc tem que  conferir sobre o criar tabela, eu fiz uma função para ela e ela tem q puxar do  jeito q ta ali,
 #se quiser mudar essa parte no meu codigo pode
@@ -68,12 +68,15 @@ def fazerCadastro():
     if not name or not email or not senha :
         flash("Preencha todos os campos.", "erro")
         return redirect(url_for("loginPage"))
+    
     if "@" not in email or "." not in email:
         flash("Digite um e-mail válido", "erro")
         return redirect(url_for("loginPage"))
+    
     if len(senha) < 8:
         flash("A senha deve conter no mínimo 8 caracteres.", "erro")
         return redirect(url_for("loginPage"))
+    
     if senha != confSenha:
         flash("As senhas não coincidem", "erro")
         return redirect(url_for("loginPage"))

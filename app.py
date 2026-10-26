@@ -40,5 +40,3 @@ def flashPage():
 def Painel():
     return render_template("home/inicial.html")
     
-
-app.run(debug=True)

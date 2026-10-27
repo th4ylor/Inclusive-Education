@@ -36,8 +36,8 @@ def flashPage():
     print("Entrar na flashPage OK")
     return render_template("home/flashCards.html")
 
+
 @app.route("/Painel", methods=["GET"])
 def Painel():
     return render_template("home/inicial.html")
     
-app.run(debug=True)

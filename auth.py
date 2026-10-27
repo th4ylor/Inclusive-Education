@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 def criar_tabela():
-    conexao = sqlite3.connect("Banco.db")
+    conexao = sqlite3.connect("banco.db")
     cursor = conexao.cursor()
 
     cursor.execute("""
@@ -24,7 +24,7 @@ def fazer_login():
     email = request.form["email"].strip().lower() #strip e lower é para caso o usuario colocar maisculo e espaço
     senha = request.form["pass"]
 
-    conexao = sqlite3.connect("Banco.db")
+    conexao = sqlite3.connect("banco.db")
     cursor = conexao.cursor()
 
     cursor.execute(
@@ -60,7 +60,7 @@ def fazer_login():
     
 def fazerCadastro():
     name = request.form["nome"].strip()
-    email = request.form["email"].strip()
+    email = request.form["email"].strip().lower()
     senha = request.form["senha"].strip()
     confSenha = request.form["confSenha"].strip()
     

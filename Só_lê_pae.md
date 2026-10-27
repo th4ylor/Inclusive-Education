@@ -30,4 +30,13 @@ Num     Significado             exemplo pra uso
 404     Not Found               Card nao encontrado
 500     Internal Server Error   Erro interno no servidor
 
+MENSAGEM PADRAO PRA COMMITS:
+Prefixo	    Quando usar
 
+feat:	    Nova funcionalidade
+fix:	    Correção de bug
+docs:	    Documentação
+style:	    Formatação ou estilo visual, sem mudar a lógica
+refactor:	Reestruturação sem mudar o comportamento esperado
+test:	    Criação ou alteração de testes
+chore:     	Manutenção e configurações

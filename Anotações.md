@@ -7,8 +7,8 @@ Posteriormente todas as chamadas para o banco de dados vao ser migradas do sqlit
 
 
 IDEIA DE NOME:
-___SENSUS FLOW___
-Sensus do latim relacionado a sentido, percepcao, sensacao, consciencia
+___SENFLOW___
+Sen de Sensus do latim relacionado a sentido, percepcao, sensacao, consciencia
 e Flow em ingles, significa fluxo, fluidez, movimento contínuo.
 Como frase de marca: Um fluxo que faz sentido para você.
 Muito gay mas é isso ai
@@ -29,6 +29,8 @@ Num     Significado             exemplo pra uso
 403     Forbidden               Usuario sem permissao
 404     Not Found               Card nao encontrado
 500     Internal Server Error   Erro interno no servidor
+
+
 
 MENSAGEM PADRAO PRA COMMITS:
 Prefixo	    Quando usar

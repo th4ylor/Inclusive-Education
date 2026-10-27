@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../static/css/flashCards.css">
+     <script src="../../static/js/flashCards.js" defer></script>
 </head>
 <body>
     <header class="topbar">
         <a href="#" class="logo">
-            <span><strong>SensFlow</strong><small>Educação Inclusiva</small></span>
+            <span><strong>SenFlow</strong><small>Educação Inclusiva</small></span>
         </a>
         <button  class="btnEntrar"> Sair </button>
     </header>
@@ -26,20 +27,10 @@
 
         <main class="hero">
 
+            <p id="mensagem"></p>
+            
             <section >
                 <article class="flip" id="flashcard" tabindex="0" >
-                    <div id="listCards" class="flipInner">
-                        <div class="face Frente">
-                            <small>PERGUNTA</small>
-                                <h3 id="perguntaC">Qual a função principal da mitocôndia?</h3>
-                            <span class="dica">Passe o mouse para virar -></span>
-                        </div>
-                        <div class="face Verso">
-                            <small>RESPOSTA</small>
-                            <h3 id="respostaC"> Produzir energia (ATP) através da respiração celular.</h3>
-                            <span class="dica"><-Passe o mouse para voltar</span>
-                        </div>
-                    </div>
                 </article>
 
                 <article class="cards">
@@ -80,15 +71,15 @@
                 </section>
 
                 <section class="newFlash">
-                    <form id="formCard" action="" method="post">
+                    <form id="formCard" >
                         <h1>Novo FlashCard</h1>
                         <label for="materia">Matéria:</label>
-                        <input type="text" name="materia" id="materia" placeholder="Ex: Matemática">
+                        <input type="text" id="materia" placeholder="Ex: Matemática">
                         <label for="pergunta">Pergunta:</label>
-                        <input type="text" name="pergunta" id="pergunta" required placeholder="Oque voce quer lembrar?">
+                        <input type="text" id="pergunta" placeholder="Oque voce quer lembrar?" required>
                         <label for="resposta">Resposta:</label>
-                        <input type="text" name="resposta" id="resposta" required placeholder="Resposta curta">
-                        <button type="submit">Adicionar card</button>
+                        <input type="text" id="resposta" placeholder="Resposta curta" required>
+                        <button type="submit">Adicionar</button>
                     </form>
                 </section>
 
@@ -96,6 +87,5 @@
 
         </main>
 
-        <script src="flashCards.js"></script>
 </body>
 </html>

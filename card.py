@@ -1,33 +1,37 @@
-from flask import Flask, request
+from flask import jsonify, request
 
-formCard = request.form["formCard"]
 baralho = []
 posicao = 0
 
-def guardarCard():
-    baralho.append({
-        "materia": request.form["materia"].upper,
-        "pergunta": request.form["pergunta"],
-        "resposta": request.form["resposta"]
-    })
-    u = len(baralho) - 1
-    return baralho[u]
+
+def cardAtual():
+    if not baralho:
+        return jsonify({"card":None})
+    return jsonify({"card": baralho[posicao]})
 
 
-def gerarCard(posicao):
-    c = baralho[posicao]
-    return f"""
-        <div class="face Frente">
-            <small>PERGUNTA . {baralho[c]["materia"]}</small>
-                <h3 id="perguntaC">{baralho[c]["pergunta"]}</h3>
-            <span class="dica">Passe o mouse para virar -></span>
-        </div>
+def criarCard():
+    global posicao
+    dados = request.get_json(silent=True) or {}
+    
+    materia = (dados.get("materia") or "").strip().upper() or "GERAL"
+    pergunta = (dados.get("pergunta") or "").strip()   
+    resposta = (dados.get("resposta") or "").strip()
+    
+    if not pergunta or not resposta:
+        return jsonify({"erro": "Preencha todos os campos."}),400
 
-        <div class="face Verso">
-            <small>RESPOSTA . {baralho[c]["materia"]}</small>
-                <h3 id="respostaC"> {baralho[c]["resposta"]}</h3>
-            <span class="dica"><-Passe o mouse para voltar</span>
-        </div>`
-    """
+    card = {"materia": materia, "pergunta": pergunta, "resposta": resposta}
+    baralho.append(card)
+    posicao = len(baralho) - 1
+    return jsonify({"card": card}),201
 
 
+def proxCard():
+    global posicao
+    
+    if not baralho:
+        return jsonify({"card": None})
+    
+    posicao = (posicao + 1) % len(baralho)
+    return jsonify({"card": baralho[posicao]})

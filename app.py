@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request
 from auth import fazer_login, fazerCadastro
 from db import createTable
+from metodologias import metodologias_bp
+
 
 app = Flask(__name__)
+app.register_blueprint(metodologias_bp)
 
 app.config["SECRET_KEY"] = "chaveExpostadePropositoPorEnquanto"
 

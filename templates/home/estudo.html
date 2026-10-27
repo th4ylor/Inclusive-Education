@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metodologias de Estudo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/estudo.css') }}">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="logo" href="/Painel">
+    <span>
+      <strong>Sensus Flow</strong>
+      <small>Educação Inclusiva</small>
+    </span>
+  </a>
+  <a class="btnEntrar" href="/Painel">Voltar ao painel</a>
+</header>
+
+<main class="pagina">
+
+  <section id="tela-lista">
+    <header class="cabeca">
+      <h1>Escolha como <span class="grad">estudar hoje</span></h1>
+      <p class="subtitulo">Cada método conduz a sua sessão de um jeito diferente. Escolha o que combina com o seu momento.</p>
+    </header>
+    <p id="resumo-sessao" class="resumo oculto"></p>
+    <div class="campo-objetivo">
+      <label for="objetivo">O que você vai estudar agora? <span>(opcional)</span></label>
+      <input id="objetivo" type="text" maxlength="120" placeholder="Ex.: resolver a lista de funções em Python">
+    </div>
+    <div id="lista-metodologias" class="lista"></div>
+  </section>
+
+  <section id="tela-sessao" class="oculto">
+    <h2 id="sessao-titulo" class="titulo-sessao"></h2>
+    <p id="sessao-objetivo" class="objetivo-sessao oculto"></p>
+
+    <div id="bloco-tempo" class="oculto">
+      <svg id="anel-tempo" class="anel" viewBox="0 0 260 260" role="img" aria-label="Tempo restante da fase atual">
+        <defs>
+          <linearGradient id="gradiente-anel" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8b6cff"></stop>
+            <stop offset="100%" stop-color="#4da3ff"></stop>
+          </linearGradient>
+        </defs>
+        <circle class="anel-trilho" cx="130" cy="130" r="110"></circle>
+        <circle id="anel-progresso" class="anel-progresso" cx="130" cy="130" r="110" stroke="url(#gradiente-anel)" transform="rotate(-90 130 130)"></circle>
+        <text id="sessao-fase" class="fase" x="130" y="108" text-anchor="middle"></text>
+        <text id="sessao-tempo" class="relogio" x="130" y="172" text-anchor="middle">--:--</text>
+      </svg>
+      <p id="sessao-mensagem" class="mensagem-fase" aria-live="polite"></p>
+      <div class="controles">
+        <button id="btn-pausar-retomar" class="botao botao-primario">Pausar</button>
+        <button id="btn-avancar" class="botao botao-fantasma">Próxima fase</button>
+      </div>
+      <p id="sessao-estatisticas" class="estatisticas"></p>
+    </div>
+
+    <div id="bloco-passos" class="oculto">
+      <div id="sessao-pontos" class="pontos"></div>
+      <p id="sessao-progresso" class="progresso-passos"></p>
+      <p id="sessao-passo" class="texto-passo" aria-live="polite"></p>
+      <p id="sessao-concluida" class="concluida oculto">Metodologia concluída.</p>
+      <div class="controles">
+        <button id="btn-avancar-passo" class="botao botao-primario">Próximo passo</button>
+      </div>
+    </div>
+
+    <div class="rodape-sessao">
+      <button id="btn-som" class="texto-link">Som: ligado</button>
+      <button id="btn-encerrar" class="texto-link">Encerrar sessão</button>
+    </div>
+  </section>
+
+</main>
+<script src="{{ url_for('static', filename='js/estudo.js') }}"></script>
+</body>
+</html>

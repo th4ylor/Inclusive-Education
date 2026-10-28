@@ -8,84 +8,77 @@
      <script src="../../static/js/flashCards.js" defer></script>
 </head>
 <body>
-    <header class="topbar">
-        <a href="#" class="logo">
-            <span><strong>SenFlow</strong><small>Educação Inclusiva</small></span>
-        </a>
-        <button  class="btnEntrar"> Sair </button>
-    </header>
-
-        <section id="inicio" class="inicio">
-        
-            <div class="textoInicial">
-                <span class="selo">Sala de estudos</span>
-                <h2>Pergunte,vire,<span class="grad">fixe.</span></h2>
-                
-                <p class="subtitulo">Transforme o que você precisa estudar em um plano que realmente cabe no seu dia.<br> Com tempo para focar, respirar e continuar.</p>
+        <section>
+            <div id="parag">
             </div>
-        </section>
-
-        <main class="hero">
-
-            <p id="mensagem"></p>
+                <header class="topbar">
+            <a href="#" class="logo">
+                <span><strong>SenFlow</strong><small>Educação Inclusiva</small></span>
+            </a>
+            <button  class="btnEntrar"> Sair </button>
+                </header>
+            <section id="inicio" class="inicio">
             
-            <section >
-                <article class="flip" id="flashcard" tabindex="0" >
-                </article>
-
-                <article class="cards">
-                    <div class="card Acerto">
-                        <button type="button"  id="acertei">Acertei</button>
-                    </div>
-                    <div class="card Quase">
-                        <button type="button" id="quase">Quase</button>
-                    </div>
-                    <div class="card Erro">
-                        <button type="button" id="errei">Errei</button>
-                    </div>
-                </article>
-
+                <div class="textoInicial">
+                    <span class="selo">Sala de estudos</span>
+                    <h2>Pergunte,vire,<span class="grad">fixe.</span></h2>
+            
+                    <p class="subtitulo">Transforme o que você precisa estudar em um plano que realmente cabe no seu dia.<br> Com tempo para focar, respirar e continuar.</p>
+                </div>
             </section>
-
-            <section class="box">
-                <section class="sessao" >
-                    <h1>Nesta sessão</h1>
-                    <article>
-                        <div class="acertos">
-                            <h3>0</h3>
-                            <small>Acertos</small>
+            <main class="hero">
+            
+                <section >
+                    <article class="flip" id="flashcard" tabindex="0" >
+                    </article>
+                    <article class="cards">
+                        <div class="card Acerto">
+                            <button type="button" id="acertei">Acertei</button>
                         </div>
-                        <div class="quase">
-                            <h3>1</h3>
-                            <small>Quase</small>
+                        <div class="card Quase">
+                            <button type="button" id="quase">Quase</button>
                         </div>
-                        <div class="erros">
-                            <h3>2</h3>
-                            <small>Erros</small>
+                        <div class="card Erro">
+                            <button type="button" id="errei">Errei</button>
                         </div>
                     </article>
                 </section>
-
-                <section class="cardaut">
-                    <button type="submit">Gerar Cards com IA</button>
+                <section class="box">
+                    <section class="sessao" >
+                        <h1>Nesta sessão</h1>
+                        <article>
+                            <div class="acertos">
+                                <h3>0</h3>
+                                <small>Acertos</small>
+                            </div>
+                            <div class="quase">
+                                <h3>1</h3>
+                                <small>Quase</small>
+                            </div>
+                            <div class="erros">
+                                <h3>2</h3>
+                                <small>Erros</small>
+                            </div>
+                        </article>
+                    </section>
+                    <section class="cardaut">
+                        <button type="submit">Gerar Cards com IA</button>
+                    </section>
+                    <section class="newFlash">
+                        <form id="formCard" >
+                            <h1>Novo FlashCard</h1>
+                            <label for="materia">Matéria:</label>
+                            <input type="text" id="materia" placeholder="Ex: Matemática">
+                            <label for="pergunta">Pergunta:</label>
+                            <input type="text" id="pergunta" placeholder="Oque voce quer lembrar?" required>
+                            <label for="resposta">Resposta:</label>
+                            <input type="text" id="resposta" placeholder="Resposta curta" required>
+                            <button type="submit">Adicionar</button>
+                        </form>
+                    </section>
                 </section>
-
-                <section class="newFlash">
-                    <form id="formCard" >
-                        <h1>Novo FlashCard</h1>
-                        <label for="materia">Matéria:</label>
-                        <input type="text" id="materia" placeholder="Ex: Matemática">
-                        <label for="pergunta">Pergunta:</label>
-                        <input type="text" id="pergunta" placeholder="Oque voce quer lembrar?" required>
-                        <label for="resposta">Resposta:</label>
-                        <input type="text" id="resposta" placeholder="Resposta curta" required>
-                        <button type="submit">Adicionar</button>
-                    </form>
-                </section>
-
-            </section>
-
-        </main>
+            </main>
+        </section>
 
 </body>
 </html>

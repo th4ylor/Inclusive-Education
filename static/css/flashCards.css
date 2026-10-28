@@ -304,3 +304,37 @@ h2{
 .cardaut button:hover{
     transform: scale(1.03);
     transition: all .3s;}
+
+
+
+
+.msg{
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -100vh);
+    transition: all 0.6s ease;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    margin: 10px auto;
+    max-width: 380px;
+    max-height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 7px 8px 22px rgba(0, 0, 0, 0.233);
+    z-index: 100;}
+.msg.show{
+    transform: translate(-50%, 0);
+    transition: all 0.4s ease;
+    opacity: 1;}
+
+.msg.erro{
+    background: #fde2e2;
+     color: #a12020;}
+.msg.sucesso{
+    background: #e0f5e5; 
+    color: #234b2d; }

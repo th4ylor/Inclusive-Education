@@ -1,27 +1,44 @@
 const formCard = document.getElementById("formCard")
 const areaCard = document.getElementById("flashcard")
 const botaoAcerto = document.getElementById("acertei")
-const mensagem = document.getElementById("mensagem")
+const parag = document.getElementById("parag")
 
 
-function mostrarmensagem(texto, tipo){
-    mensagem.textContent = texto
-    mensagem.className = tipo
+function mostrarmensagem(texto = "teste", tipo = "erro"){
+    console.log("executou")
+    if (texto == "" || tipo == ""){
+        parag.innerHTML= ""
+        console.log("deu ERRADO")
+        return   
+    }
+    const mensagem = document.createElement("p")
+        mensagem.textContent = texto
+        mensagem.className = `msg ${tipo}`
+        parag.appendChild(mensagem)
+
+        mensagem.getBoundingClientRect()
+        mensagem.classList.add("show")
+        console.log("add essa bosta")
+
+        setTimeout(() => {
+            mensagem.classList.remove("show")
+            setTimeout(() => mensagem.remove(), 200)
+        }, 4000)
 }
 
 
 function criarFace(classe, idText, rotulo, materia, text, dica){
-    const face = document.createElement("small")
+    let face = document.createElement("face")
     face.className = "face" + classe
 
-    const small = document.createElement("small")
+    let small = document.createElement("small")
     small.textContent = rotulo + " . " + materia
 
-    const h3 = document.createElement("h3")
+    let h3 = document.createElement("h3")
     h3.id = idText
     h3.textContent = text
 
-    const span = document.createElement("span")
+    let span = document.createElement("span")
     span.className = "dica"
     span.textContent = dica
 
@@ -41,11 +58,11 @@ function renderCard(card){
         return
     }
 
-    const flip = document.createElement("div")
+    let flip = document.createElement("div")
     flip.className = "flipInner"
     flip.append(
-        criarFace("Frente", "perguntaC", "PERGUNTA", card.materia, card.pergunta, "Passe o mouse para virar ->"),
-        criarFace("Verso", "respostaC", "RESPOSTA", card.materia, card.resposta, "<- Passe o mouse para voltar ")
+        criarFace(" Frente", "perguntaC", "PERGUNTA", card.materia, card.pergunta, "Passe o mouse para virar ->"),
+        criarFace(" Verso", "respostaC", "RESPOSTA", card.materia, card.resposta, "<- Passe o mouse para voltar ")
     )
     areaCard.appendChild(flip)
     botaoAcerto.hidden = false
@@ -80,11 +97,12 @@ formCard.addEventListener("submit", async (e) => {
             mostrarmensagem(dados.erro, "erro")
             return
         }
-        mostrarmensagem("", "")
+        mostrarmensagem("Card adicionado", "sucesso")
         formCard.reset()
         renderCard(dados.card)
     }catch (erro) {
         mostrarmensagem("Erro ao conectar com  Python", "erro")
+        return
     }
 })
 

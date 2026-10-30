@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../static/css/flashCards.css">
-     <script src="../../static/js/flashCards.js" defer></script>
 </head>
 <body>
         <section>
@@ -32,31 +31,25 @@
                     <article class="flip" id="flashcard" tabindex="0" >
                     </article>
                     <article class="cards">
-                        <div class="card Acerto">
-                            <button type="button" id="acertei">Acertei</button>
-                        </div>
-                        <div class="card Quase">
-                            <button type="button" id="quase">Quase</button>
-                        </div>
-                        <div class="card Erro">
-                            <button type="button" id="errei">Errei</button>
-                        </div>
+                        <button class="card Acerto" type="button" id="acertei">Acertei</button>
+                        <button class="card Quase" type="button" id="quase">Quase</button>
+                        <button class="card Erro" type="button" id="errei">Errei</button>
                     </article>
                 </section>
                 <section class="box">
                     <section class="sessao" >
                         <h1>Nesta sessão</h1>
                         <article>
-                            <div class="acertos">
-                                <h3>0</h3>
+                            <div class="acertos" id="innerAcerto" >
+                                <h3 id="numeroAcerto">0</h3>
                                 <small>Acertos</small>
                             </div>
-                            <div class="quase">
-                                <h3>1</h3>
+                            <div class="quase" id="innerQuase">
+                                <h3 id="numeroQuase">0</h3>
                                 <small>Quase</small>
                             </div>
-                            <div class="erros">
-                                <h3>2</h3>
+                            <div class="erros" id="innerErro">
+                                <h3 id="numeroErro">0</h3>
                                 <small>Erros</small>
                             </div>
                         </article>
@@ -79,6 +72,8 @@
                 </section>
             </main>
         </section>
+
+        <script src="../../static/js/flashCards.js" defer></script>
 
 </body>
 </html>

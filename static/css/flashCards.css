@@ -21,6 +21,7 @@ body{
     radial-gradient(70% 50% at 80% 5%,rgba(255, 147, 147, 0.18),transparent 65%),
     radial-gradient(60% 50% at 15% 90%, rgba(145, 98, 255, 0.12),transparent 65%),
     radial-gradient(50% 40% at 50% 50%, rgba(40, 230, 255, 0.05),transparent 70%),#000000;
+    background-attachment: fixed;
     color: var(--texto);
     min-height: 100vh;}
 header{
@@ -136,7 +137,6 @@ h2{
     transition:  .7s;
     height: 100%;
     width: 100%;
-    
 }
 .flip:hover .flipInner, .flip:focus-visible .flipInner, .flip.virado .flipInner{
     transform: rotateY(180deg);
@@ -151,10 +151,10 @@ h2{
     justify-content: space-between;
     border-radius: var(--raio);
     list-style-type: none;
-    background: linear-gradient(135deg, #08580c23 , #02210d25);
-    border: 1px solid #007a1e6a;
+    background: linear-gradient(135deg, #0f4a2523 , #33525f25);
+    border: 1px solid #06b8ff4e;
     box-shadow:
-        0 0 5px #35ff6870;
+        0 0 5px #ffffff92;
 }
 .Verso{
     transform: rotateY(180deg);}
@@ -195,9 +195,9 @@ h2{
 .sessao article small{  
     font-size: .75rem;
     color: var(--suave);}
-.acertos{color: rgb(23, 255, 31);}
-.quase{color: rgb(230, 255, 45);}
-.erros{color: rgb(252, 51, 51);}
+.acertos{color: rgb(161, 255, 164);}
+.quase{color: rgb(240, 255, 128);}
+.erros{color: rgb(255, 144, 144);}
 
 .newFlash{
     display: grid;
@@ -239,7 +239,7 @@ h2{
     margin-top: 15px;
     cursor: pointer;
     text-shadow: 1px 2px 6px black;
-    background: linear-gradient(125deg, #78ffbe94,#d176fb);
+    background: linear-gradient(125deg, #65ffb552,#c64cff48);
 }
 
 .cards{
@@ -252,35 +252,43 @@ h2{
     border-radius: var(--raio);
     background: var(--vidro);
     border: 1px solid var(--borda);
-    min-height: 90px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    letter-spacing: 0.1em;
     font-size: .75rem;
     width: 100%;
+    color: #fff;
+    text-shadow: 3px 3px 8px #000;
+    cursor: pointer;
 }
+.card:hover{
+    transform: scale(1.1);
+}
+
 .Acerto {
-    background: rgba(100, 255, 86, 0.063);
-    border: 1px solid #35ff6898;
+    background: rgba(190, 255, 184, 0.604);
+    border: 1px solid #2c2c2c24;
     box-shadow:
-        0 0 5px #35ff6872,
-        0 0 10px rgba(53, 255, 104, 0.374),
+        0 0 5px #35ff6852,
+        0 0 10px rgba(53, 255, 104, 0.157),
         0 0 20px rgba(53, 255, 104, 0.191);}
 .Quase{
-    background: rgba(188, 255, 3, 0.06);
+    background: rgba(255, 248, 185, 0.604);
         box-shadow:
-        0 0 5px #ffda357b,
-        0 0 10px rgba(231, 255, 53, 0.407),
+        0 0 5px #ffda3539,
+        0 0 10px rgba(231, 255, 53, 0.196),
         0 0 20px rgba(255, 201, 53, 0.274);
-    border: 1px solid #ffd50092;}
+    border: 1px solid #2c2c2c24;}
 .Erro{
-    background: rgba(255, 3, 3, 0.06);
+    background: rgba(255, 150, 150, 0.652);
         box-shadow:
-        0 0 5px #ff353583,
+        0 0 5px #ff353545,
         0 0 10px rgba(255, 53, 53, 0.372),
-        0 0 20px rgba(255, 53, 53, 0.4);
-    border: 1px solid #ff00007a;}
+        0 0 20px rgba(255, 53, 53, 0.226);
+    border: 1px solid #2c2c2c24;}
 
 .cardaut{
     display: flex;
@@ -297,16 +305,13 @@ h2{
     border-radius: 14px;
     width:100%;
     font-size: .75rem;
-    color: #ffffff;
+    color: #000000;
+    letter-spacing: 0.1em;
+    font-weight: 600;
     cursor: pointer;
-    transition: all .3s;
-    background: linear-gradient(125deg, #ff212194,#004af8);}
+    background: linear-gradient(125deg, #ebfff6,#ffd9d9);}
 .cardaut button:hover{
-    transform: scale(1.03);
-    transition: all .3s;}
-
-
-
+    transform: scale(1.02);}
 
 .msg{
     position: fixed;
@@ -338,3 +343,15 @@ h2{
 .msg.sucesso{
     background: #e0f5e5; 
     color: #234b2d; }
+
+[hidden] {
+    display: none !important;} 
+    .avisoCard{
+        justify-content: center;
+        img{
+        transform: scale(0.7);}
+        h2{
+            font-size: 1.85rem;  
+            text-align:center;
+        }
+}

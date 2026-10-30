@@ -2,9 +2,14 @@ const formCard = document.getElementById("formCard")
 const areaCard = document.getElementById("flashcard")
 const botaoAcerto = document.getElementById("acertei")
 const parag = document.getElementById("parag")
+const quase = document.getElementById("quase")
+const errei = document.getElementById("errei")
+let acerto = 0
+let erro = 0
+let quaseX = 0
 
 
-function mostrarmensagem(texto = "teste", tipo = "erro"){
+function mostrarmensagem(texto, tipo){
     console.log("executou")
     if (texto == "" || tipo == ""){
         parag.innerHTML= ""
@@ -28,7 +33,7 @@ function mostrarmensagem(texto = "teste", tipo = "erro"){
 
 
 function criarFace(classe, idText, rotulo, materia, text, dica){
-    let face = document.createElement("face")
+    let face = document.createElement("div")
     face.className = "face" + classe
 
     let small = document.createElement("small")
@@ -48,13 +53,21 @@ function criarFace(classe, idText, rotulo, materia, text, dica){
 
 
 function renderCard(card){
+    console.log("valor do acertei " + acerto)
+    console.log("valor do Quase " + quaseX)
+    console.log("valor do Errei " + erro)
     areaCard.replaceChildren()
 
     if (!card){
-        const aviso = document.createElement("p")
-        aviso.textContent = "Nenhum card ainda. Crie o primeiro no formulario ao lado"
+        const aviso = document.createElement("div")
+        aviso.className = "avisoCard"
+        aviso.innerHTML= `
+        <h2>Nenhum card ainda.<br> Crie o primeiro no formulario ao lado.</h2>
+        <img src='../../static/img/Learning-amico.svg' ></img>`
         areaCard.appendChild(aviso)
         botaoAcerto.hidden = true
+        quase.hidden = true
+        errei.hidden = true
         return
     }
 
@@ -66,6 +79,8 @@ function renderCard(card){
     )
     areaCard.appendChild(flip)
     botaoAcerto.hidden = false
+    quase.hidden = false
+    errei.hidden = false
 }
 
 
@@ -78,13 +93,11 @@ async function loadCardAtual(){
 
 formCard.addEventListener("submit", async (e) => {
     e.preventDefault()
-
     let newCard = {
         materia: document.getElementById("materia").value,
         pergunta: document.getElementById("pergunta").value,
         resposta: document.getElementById("resposta").value
     }
-
     try{
         const resposta = await fetch("/api/flashcards", {
             method: "POST",
@@ -92,7 +105,6 @@ formCard.addEventListener("submit", async (e) => {
             body: JSON.stringify(newCard)
         })
         let dados = await resposta.json()
-        
         if (!resposta.ok){
             mostrarmensagem(dados.erro, "erro")
             return
@@ -106,14 +118,33 @@ formCard.addEventListener("submit", async (e) => {
     }
 })
 
+//Acoes dos botoes de Acerto, Quase e erro
 botaoAcerto.addEventListener("click", async () => {
-    try{
-        const resposta = await fetch("/api/flashcards/proximo", {method: "POST"})
-        const dados = await resposta.json()
-        renderCard(dados.card)
-    }catch (erro){
-        mostrarmensagem("Erro ao conectar com o server.", "erro")
-    }
+    const resposta = await fetch("/api/flashcards/1", {method: "POST"})
+    const dados = await resposta.json()
+    const innerAcerto  = document.getElementById("numeroAcerto")
+    acerto = addCount(innerAcerto, acerto )
+    renderCard(dados.card)
 })
+quase.addEventListener("click", async () => {
+    const resposta = await fetch("/api/flashcards/2", {method: "PATCH"})
+    const dados = await resposta.json()
+    const innerQuase = document.getElementById("numeroQuase")
+    quaseX = addCount(innerQuase, quaseX )
+    renderCard(dados.card)  
+})
+errei.addEventListener("click", async () => {
+    const resposta = await fetch("/api/flashcards/2", {method: "PATCH"})
+    const dados = await resposta.json()
+    const innerErro = document.getElementById("numeroErro")
+    erro = addCount(innerErro, erro )
+    renderCard(dados.card)
+})
+
+function addCount(html,num){
+    num = num + 1
+    html.innerHTML = `<h3>${num}</h3>`
+    return num
+}
 
 loadCardAtual()

@@ -1,4 +1,5 @@
 from flask import jsonify, request
+import random
 
 baralho = []
 posicao = 0
@@ -7,8 +8,8 @@ posicao = 0
 def cardAtual():
     if not baralho:
         return jsonify({"card":None})
+    print(baralho)
     return jsonify({"card": baralho[posicao]})
-
 
 def criarCard():
     global posicao
@@ -26,12 +27,24 @@ def criarCard():
     posicao = len(baralho) - 1
     return jsonify({"card": card}),201
 
-
-def proxCard():
+def acertoCard():
     global posicao
-    
+    removerCard()
     if not baralho:
         return jsonify({"card": None})
-    
     posicao = (posicao + 1) % len(baralho)
     return jsonify({"card": baralho[posicao]})
+
+def removerCard():
+    global posicao
+    del baralho[posicao]
+    return
+    
+def randomCard():
+    global posicao
+    anterior = posicao
+    posicao = random.randrange(len(baralho))
+    while posicao == anterior:
+        posicao = random.randrange(len(baralho))
+    return cardAtual()
+    

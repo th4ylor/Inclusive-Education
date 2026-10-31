@@ -43,7 +43,7 @@ def fazer_login():
     
 def fazerCadastro():
     name = request.form["nome"].strip()
-    email = request.form["email"].strip()
+    email = request.form["email"].strip().lower()
     senha = request.form["senha"].strip()
     confSenha = request.form["confSenha"].strip()
     

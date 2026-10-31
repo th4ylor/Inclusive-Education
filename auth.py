@@ -3,23 +3,6 @@ from db import openConnection
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 
-
-
-def criar_tabela():
-    conexao = openConnection()
-    cursor = conexao.cursor()
-
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS usuarios (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            email TEXT NOT NULL UNIQUE,   --UNIQUE impede email repetido
-            senha_hash TEXT NOT NULL      --guarda a senha criptografada, em hash
-        )
-    """)
-
-    conexao.commit()   #guarda a tabela, salva ela
-    conexao.close()
-
 def fazer_login():
     email = request.form["email"].strip().lower() #strip e lower é para caso o usuario colocar maisculo e espaço
     senha = request.form["pass"]
@@ -48,7 +31,7 @@ def fazer_login():
         return redirect(url_for("loginPage"))
     
 
-    session["usuario_id"] = resultado[0]   # guarda quem está logado, o 0 aqui é para o id, se for 1  é para senha hash
+    session["id_usuario"] = resultado[0]   # guarda quem está logado, o 0 aqui é para o id, se for 1  é para senha hash
     flash("Login aceito")
     return redirect(url_for("rotas.Painel"))
 
@@ -93,12 +76,10 @@ def fazerCadastro():
         
     #Erro que acontece quando o email ja existe
     except sqlite3.IntegrityError:
-        print("Este r-mail já está cadastrado.")
         flash("Este r-mail já está cadastrado.", "erro")
         return redirect(url_for("loginPage"))
     finally:
         conn.close()
-        print("Cadastro realizado! Agora faça o login.")
     flash("Cadastro realizado! Agora faça o login.", "sucesso")
     return redirect(url_for("loginPage"))
     

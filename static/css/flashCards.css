@@ -66,7 +66,7 @@ nav a:hover, nav .ativo{color:var(--texto);}
     padding: 10px 28px 10px;
     border-radius: var(--raio);
     border: .6px solid black;
-    background-image: linear-gradient(215deg, rgba(255, 8, 8, 0.798), rgba(0, 255, 255, 0.568));
+    background-image: linear-gradient(215deg, rgba(60, 180, 255, 0.953), rgba(58, 58, 58, 0.739));
     background-size: 0% 100%;
     cursor: pointer;
     color: black;
@@ -235,11 +235,12 @@ h2{
     padding: 12px;
     border-radius: 14px;
     width:100%;
+    border: none;
     color: #ffffff;
     margin-top: 15px;
     cursor: pointer;
     text-shadow: 1px 2px 6px black;
-    background: linear-gradient(125deg, #65ffb552,#c64cff48);
+    background: linear-gradient(155deg, #2f303871,#ff4c7c65);
 }
 
 .cards{

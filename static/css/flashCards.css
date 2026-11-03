@@ -111,7 +111,7 @@ h2{
     letter-spacing: .01em;}
 .grad{
     padding: 0px 8px;
-    background: var(--roxo);
+    background: rgb(255, 61, 61);
     border-radius: 20px;
     background-clip: text;
     color: transparent;}
@@ -353,6 +353,7 @@ h2{
         transform: scale(0.7);}
         h2{
             font-size: 1.85rem;  
+            color: #d4d4d4d1;
             text-align:center;
         }
 }

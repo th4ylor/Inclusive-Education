@@ -23,12 +23,12 @@ def createTable():
         conn.execute("""
             CREATE TABLE IF NOT EXISTS flashcards(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                id_usuario INTEGER  NOT NULL,
+                usuario_id INTEGER  NOT NULL,
                 materia TEXT NOT NULL DEFAULT 'GERAL',
                 pergunta TEXT NOT NULL,
                 resposta TEXT NOT NULL,
                 
-                FOREIGN KEY (id_usuario)
+                FOREIGN KEY (usuario_id)
                     REFERENCES usuarios(id)
                     ON DELETE CASCADE
             )
@@ -39,8 +39,8 @@ def createTable():
         conn.close()
     
 def salvarFlashcards(mat, per, resp):
-    id_usuario = session.get["id_usuario"]
-    if not id_usuario:
+    usuario_id = session.get["usuario_id"]
+    if not usuario_id:
         return False
     
     conn = openConnection()
@@ -49,7 +49,7 @@ def salvarFlashcards(mat, per, resp):
             INSERT INTO flashcards 
             (id-usuario, materia, pergunta, resposta)
             VALUES (?, ?, ?, ?)
-                    """, (id_usuario, mat, per, resp))
+                    """, (usuario_id, mat, per, resp))
         conn.commit()
         return True
     finally:

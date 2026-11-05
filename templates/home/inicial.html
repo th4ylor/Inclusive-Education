@@ -9,8 +9,14 @@
     
 </head>
 <body>
-    <header> 
-                            
+    <header > 
+
+            {% with mensagens = get_flashed_messages(with_categories=true)%}
+            {%for categoria,msg in mensagens%}
+                <p class="msg {{categoria}}">{{msg}}</p>
+            {% endfor %}
+            {% endwith %}
+
 <!-- titulo -->
 
         <div class = "titulo">

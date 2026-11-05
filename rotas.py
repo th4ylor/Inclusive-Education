@@ -28,7 +28,6 @@ def registerAuth():
     print("Entrou na funcao para fazer cadastro")
     return fazerCadastro()
 
-
 @rotas_bp.route("/painel", methods=["GET"])
 @loginObrigatorio
 def Painel():

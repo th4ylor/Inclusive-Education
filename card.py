@@ -2,21 +2,23 @@ from flask import jsonify, request, session
 import random
 from db import openConnection
 
-baralho = []
-posicao = 0
-
+card_id = 0
 
 
 def cardAtual():
-    carregarCard()
-    if not baralho:
-        return jsonify({"card":None})
-    print(baralho)
-    return jsonify({"card": baralho[posicao]})
-
+    usuario_id = session.get("usuario_id")
+    card_id = session.get("card_atual_id")
+    
+    conn = openConnection()
+    resultado = conn.execute(
+        "SELECT * FROM flashcards WHERE id = ? AND usuario_id = ?", (card_id, usuario_id)).fetchone()
+    conn.close()
+    if resultado is None :
+        return randomCard()
+    return jsonify({"card": dict(resultado)})
+    
 
 def criarCard():
-    global posicao
     dados = request.get_json(silent=True) or {}
     
     materia = (dados.get("materia") or "").strip().upper() or "GERAL"
@@ -47,44 +49,43 @@ def criarCard():
     finally:
         conn.close()
 
+
 def acertoCard():
-    global posicao
     removerCard()
-    if not baralho:
-        return jsonify({"card": None})
-    posicao = (posicao + 1) % len(baralho)
-    return jsonify({"card": baralho[posicao]})
+    return randomCard()
+
 
 def removerCard():
-    global posicao
-    card_id = baralho[posicao]["id"]
+    card_id = session.get("card_atual_id")
     usuario_id = session.get("usuario_id")
+    
+    if usuario_id is None or card_id is None:
+        return
+    
     conn = openConnection()
-    conn.execute("DELETE FROM flashcards WHERE id = ? AND usuario_id = ?", (card_id, usuario_id))
+    conn.execute("DELETE FROM flashcards WHERE id = ? AND usuario_id = ?",
+                (card_id, usuario_id))
     conn.commit()
     conn.close()
-    carregarCard()
+    session.pop("card_atual_id", None)
     return
+    
     
 def randomCard():
-    print("TESTE MEU FII", len(baralho))
-    global posicao
-    anterior = posicao
-    posicao = random.randrange(len(baralho))
-    while posicao == anterior:
-        posicao = random.randrange(len(baralho))
-    return jsonify({"card" : baralho[posicao]})
-
-def carregarCard():
-    global posicao
-    usuario_id = session.get("usuario_id")
-    
+    usuario_id =  session.get("usuario_id")
     conn = openConnection()
-    
-    cursor = conn.execute(" SELECT * FROM flashcards WHERE usuario_id = ?", (usuario_id,))
-    resultado = cursor.fetchall()
-    baralho.clear()
-    baralho.extend(dict(linha) for linha in resultado)
-    posicao = 0
+    resultado = conn.execute("SELECT * FROM flashcards WHERE usuario_id = ?", (usuario_id,)).fetchall()
     conn.close()
-    return
+    cards = [dict(linha) for linha in resultado]
+    print(cards)
+    if not cards:
+        session.pop("card_atual_id", None)
+        return jsonify({"card": None})
+    anteriorId = session.get("card_atual_id")
+    seila = [
+        card for card in cards
+        if card["id"] != anteriorId
+    ]
+    escolhido = random.choice(seila or cards)
+    session["card_atual_id"] = escolhido["id"]
+    return jsonify({"card": escolhido})

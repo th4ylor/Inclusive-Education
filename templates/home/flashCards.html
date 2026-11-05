@@ -14,7 +14,9 @@
             <a href="#" class="logo">
                 <span><strong>SenFlow</strong><small>Educação Inclusiva</small></span>
             </a>
-            <button  class="btnEntrar"> Sair </button>
+            <form action="{{url_for('rotas.logout')}}" method="POST">
+                <button type="submit" class="btnEntrar"> Sair </button>
+            </form>
                 </header>
             <section id="inicio" class="inicio">
             

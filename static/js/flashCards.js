@@ -87,6 +87,7 @@ function renderCard(card){
 async function loadCardAtual(){
     const resposta = await fetch("/api/flashcards/atual")
     const dados = await resposta.json()
+    console.log("Esse é o LoadCard" + dados)
     renderCard(dados.card)
 }
 

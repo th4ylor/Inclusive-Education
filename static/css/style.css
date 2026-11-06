@@ -98,7 +98,7 @@ h1{
     letter-spacing: .01em;}
 .grad{
     padding: 0px 8px;
-    background: var(--roxo);
+    background: radial-gradient(#ffffff, var(--verde));
     border-radius: 20px;
     background-clip: text;
     color: transparent;}
@@ -115,7 +115,7 @@ h1{
     cursor: pointer;}
 .btn-prim:hover, .btn-sec:hover{ color: var(--suave);transform: scale(1.05);}
 .btn-prim{
-    background:linear-gradient(135deg, #3bf66a, #22adee);
+    background:linear-gradient(135deg, #fbfdfc, #22adee);
     box-shadow: 0 10px 30px rgba(100, 214, 255, .2);}
 .btn-sec{
     background: var(--vidro);
@@ -125,7 +125,7 @@ h1{
     padding: 10px 28px 10px;
     border-radius: var(--raio);
     border: .6px solid var(--borda);
-    background-image: linear-gradient(135deg, var(--azul), var(--ouro));
+    background:linear-gradient(135deg, #fbfdfc, #22adee, var(--ouro));
     background-size: 0% 100%;
     background-repeat: no-repeat;
     transition: all .2s ease;
@@ -469,13 +469,39 @@ ol{
 
 /* Sessao Sobre*/
 .sobre{
-    margin-top: 10%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    max-width: 1180px;
+    margin: 100px auto 60px;}
+.cabecalho-sobre{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.sobre-selo{
+    color: var(--verde);
+    font-weight: 600;
+}
+.titsobre{
+    margin: 12px 0;
+    font-size: 35px;
+}
+.cabecalho-sobre p{
+    color: var(--suave);
+}
+
+.painel-equipe{
     overflow: hidden;
-    height: 100vh;}
+    background: #141d2b;
+    border: 1px solid var(--borda);
+    border-radius: 24px;
+}
+
+.sobre .item{
+    display: none;
+}
+.sobre .item.active{
+    display: flex;
+}
+
 .arrows{
     width: 90%;
     position: absolute;
@@ -484,12 +510,6 @@ ol{
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-between;}
-.titsobre{
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    font-size: 1.15rem;}
 .arrows button{
     top: 60%;
     width: 50px;
@@ -505,55 +525,75 @@ ol{
     width: 30px;
     margin-top: 4px;}
 .lista{
-    width: 95%;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;}
-section .lista .item{
-    position: absolute;
-    inset: 0;}
-.pss-img{
-    position: absolute;
-    top: 35%;
-    width: 60%;
-    transition: 0.5s;
-    transition-delay: 0.3s;
-    transform: rotate(-20deg);
-    opacity: 1;}
-.pss-img img{
     width: 100%;
-    transform: rotate(0deg);}
+    height: auto;}
+section .lista .item{
+    position: absolute;}
+
+
+.pss-img{
+    width: 45%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 24px 20px 0;
+    background: radial-gradient(circle, rgba(47, 212, 160, 0.20), transparent 70%);}
+.pss-img img{
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    object-position: center bottom;}
+
 .carrocel{
-    position: absolute;
-    padding: 10px 10%;
-    right: 0px;
-    width: 41%;
-    height: 100%;
+    width: 55%;
+    padding: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: end;
-    gap: 20px;}
+    align-items: flex-start;
+    gap: 18px;}
 .pss-information{
+    padding: 6px 14px;
+    border: 1px solid var(--verde);
+    border-radius: 20px;
+    color: var(--verde);
+    font-size: 14px;
     font-weight: bold ;}
-.carrocel h2{
-    font-size: 3rem;
-    line-height: 1em;}
+.carrocel h3{
+    font-size: 48px;
+    line-height: 1.1px;}
 .carrocel .description{
-    color: #d9d9d9d9;
-    font-size: 12px;
-    text-align: right;
-    max-width: 400px;}
+    color: var(--suave);
+    font-size: 13px;
+    text-align: left;
+    line-height: 1.7;}
 .carrocel .information{
-    border-radius: 30px;
-    height: 35px;
-    width: 120px;
-    text-transform: uppercase;
-    border: 2px solid #660ebd;
-    background-color: #beff1b;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    background: var(--verde);
     color: white;
+    font: inherit;
     cursor: pointer;
-    font-weight: bold;}
+    font-weight: 600;}
+
+.controles{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 32px;
+    border-top: 1px solid var(--borda);
+}
+.indicators, .pontos, .arrows{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.indicators{
+    gap: 24px;}
 section .lista::before{
     content: '';
     position: absolute;
@@ -625,11 +665,51 @@ section .lista .item.active .information {
     opacity: 1;}
 
 
-/*Responsividade mais ou menos*/
-@media (max-width: 860px){
-    .hero {grid-template-columns: 1fr;
-    padding-top: 30px;}
-    nav{
-        display: none;}}
+/* No celular, a foto inteira fica acima do texto. */
+@media (max-width: 640px){
+    .sobre{
+        height: auto;
+        min-height: 0;
+        padding: 80px 0 110px;}
+    .sobre .titsobre{
+        width: 100%;
+        text-align: center;}
+    .sobre .lista .item.active{
+        position: relative;}
+    .sobre .pss-img{
+        position: relative;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        width: 100%;
+        height: clamp(260px, 60vh, 420px);}
+    .sobre .carrocel{
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 24px 28px 0;
+        align-items: center;
+        gap: 16px;
+        text-align: center;}
+    .sobre .carrocel h2{
+        font-size: clamp(1.8rem, 8vw, 2.5rem);}
+    .sobre .carrocel .description{
+        text-align: center;}
+    .sobre .arrows{
+        top: 260px;}
+    .sobre .indicators{
+        left: 50%;
+        bottom: 24px;
+        transform: translateX(-50%);
+        flex-direction: row;
+        align-items: center;}
+    .sobre .indicators .number{
+        font-size: 2rem;}
+    .sobre .indicators ul{
+        padding: 0;
+        list-style: none;}
+    .sobre .indicators ul li{
+        width: 22px;
+        height: 8px;}}
 @media (prefers-reduced-motion: reduce){
     *{transition: none !important}}

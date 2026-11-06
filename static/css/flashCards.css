@@ -1,12 +1,7 @@
 :root {
-  --bg: #050816;
   --texto: #eef0ff;
   --suave: #9aa3c7;
   --azul: #4da3ff;
-  --roxo: #8b6cff;
-  --rosa: #ff5fa2;
-  --verde: #2fd4a0;
-  --ouro: #ffb627;
   --vidro: rgba(255, 255, 255, .06);
   --borda: rgba(255, 255, 255, .12);
   --raio: 24px;}
@@ -47,22 +42,10 @@ a{
     display: flex;
     align-items: center;
     gap: 12px;}
-.logoIcon{
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--roxo), var(--azul), black, var(--ouro));}
 .logo small{
     display: block;
     font-size: .65rem;}
-nav{
-    display: flex;
-    gap: 28px;
-    margin-top: 2em;
-    color: var(--suave);}
-nav a:hover, nav .ativo{color:var(--texto);}
 .btnEntrar{
-    color: var(--suave);
     padding: 10px 28px 10px;
     border-radius: var(--raio);
     border: .6px solid black;
@@ -74,7 +57,6 @@ nav a:hover, nav .ativo{color:var(--texto);}
     transition: all .2s ease;
     font-size: 12px;}
 .btnEntrar:hover{
-    transition: all .2s ease;
     color: rgb(255, 255, 255);
     font-weight: 700;
     transform: scale(1.1);
@@ -154,15 +136,13 @@ h2{
     background: linear-gradient(135deg, #0f4a2523 , #33525f25);
     border: 1px solid #06b8ff4e;
     box-shadow:
-        0 0 5px #ffffff92;
-}
+        0 0 5px #ffffff92;}
 .Verso{
     transform: rotateY(180deg);}
 .face small{
     font-size: .7rem;
-    letter-spacing: .15rem;
-}
-.face h2{
+    letter-spacing: .15rem;}
+.face h3{
     font-size: 1.5rem;
     color: var(--azul);
     line-height: 1.25;}
@@ -179,12 +159,10 @@ h2{
     width: 100%;
     border: 1px solid var(--borda);
     background: var(--vidro);
-    border-radius: var(--raio);
-    bottom: 20px;}
+    border-radius: var(--raio);}
 .sessao h1{
     font-size: 1.05rem;
-    letter-spacing: .05rem;
-}
+    letter-spacing: .05rem;}
 .sessao h3{
     font-size: 1.7rem;}
 .sessao article{
@@ -198,7 +176,6 @@ h2{
 .acertos{color: rgb(161, 255, 164);}
 .quase{color: rgb(240, 255, 128);}
 .erros{color: rgb(255, 144, 144);}
-
 .newFlash{
     display: grid;
     margin-top: 20px;
@@ -211,17 +188,14 @@ h2{
     padding: 12px 14px;
     font-size: .80rem;
     letter-spacing: .03rem;
-    border: none;
     width: 100%;
     outline: none;
     color: var(--texto);
-    box-sizing: border-box;
     border-radius: 14px;
     background: var(--vidro);
     border: 1px solid var(--borda);}
 .newFlash input::placeholder{
     font-size: .75rem;}
-
 .newFlash label{
     font-weight: 500;
     font-size: .75rem;
@@ -240,15 +214,12 @@ h2{
     margin-top: 15px;
     cursor: pointer;
     text-shadow: 1px 2px 6px black;
-    background: linear-gradient(155deg, #2f303871,#ff4c7c65);
-}
-
+    background: linear-gradient(155deg, #2f303871,#ff4c7c65);}
 .cards{
     margin-top: 20px;
     gap: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
+    grid-template-columns: repeat(3, 1fr);}
 .card{
     border-radius: var(--raio);
     background: var(--vidro);
@@ -263,12 +234,9 @@ h2{
     width: 100%;
     color: #fff;
     text-shadow: 3px 3px 8px #000;
-    cursor: pointer;
-}
+    cursor: pointer;}
 .card:hover{
-    transform: scale(1.1);
-}
-
+    transform: scale(1.1);}
 .Acerto {
     background: rgba(190, 255, 184, 0.604);
     border: 1px solid #2c2c2c24;
@@ -290,7 +258,6 @@ h2{
         0 0 10px rgba(255, 53, 53, 0.372),
         0 0 20px rgba(255, 53, 53, 0.226);
     border: 1px solid #2c2c2c24;}
-
 .cardaut{
     display: flex;
     align-items: center;
@@ -298,9 +265,7 @@ h2{
     margin-top: 12px;
     padding: 20px;
     border-radius: var(--raio);
-    background: var(--vidro);
-}
-
+    background: var(--vidro);}
 .cardaut button{
     padding: 12px;
     border-radius: 14px;
@@ -313,7 +278,6 @@ h2{
     background: linear-gradient(125deg, #ebfff6,#ffd9d9);}
 .cardaut button:hover{
     transform: scale(1.02);}
-
 .msg{
     position: fixed;
     top: 30px;
@@ -337,23 +301,18 @@ h2{
     transform: translate(-50%, 0);
     transition: all 0.4s ease;
     opacity: 1;}
-
 .msg.erro{
     background: #fde2e2;
      color: #a12020;}
 .msg.sucesso{
     background: #e0f5e5; 
     color: #234b2d; }
-
 [hidden] {
     display: none !important;} 
     .avisoCard{
-        justify-content: center;
         img{
         transform: scale(0.7);}
         h2{
             font-size: 1.85rem;  
             color: #d4d4d4d1;
-            text-align:center;
-        }
-}
+            text-align:center;}}

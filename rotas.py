@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, Flask
+from flask import Blueprint, render_template, session, redirect, url_for, flash
 from auth import fazer_login, fazerCadastro, loginObrigatorio
 from card import cardAtual, criarCard, acertoCard, randomCard
 
@@ -60,3 +60,9 @@ def apiProxCard():
 @loginObrigatorio
 def apiRandom():
     return randomCard()
+
+@rotas_bp.route("/logout", methods=["POST"])
+def logout():
+    session.clear()
+    flash("Sessão encerada com sucesso.", "sucesso")
+    return redirect(url_for("rotas.loginPage"))

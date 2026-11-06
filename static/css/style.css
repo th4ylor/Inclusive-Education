@@ -501,35 +501,53 @@ ol{
 .sobre .item.active{
     display: flex;
 }
-
-.arrows{
-    width: 90%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: space-between;}
-.arrows button{
-    top: 60%;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;}
-.arrows button:first-child img {
-    transform: scaleX(-1);}
-.arrows button:hover{
-    background-color: #beff1b;}
-.arrows button img{
-    width: 30px;
-    margin-top: 4px;}
 .lista{
     width: 100%;
-    height: auto;}
-section .lista .item{
-    position: absolute;}
+    height: auto;
 
+    --calculation: 1;}
+
+@keyframes entradaTexto{
+    from{
+        opacity: 0;
+        transform: translateX(calc(140px * var(--calculation)));}
+    to{
+        opacity: 1;
+        transform: translateX(0);}}
+@keyframes entradaFoto{
+    from{
+        opacity: 0;
+        transform: translateX(calc(-140px * var(--calculation)));}
+    to{
+        opacity: 1;
+        transform: translateX(0);}}
+.sobre .item.active .carrocel > * {
+    animation-name: entradaTexto;
+    animation-duration: 0.55s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+.sobre .item.active .pss-img img{
+    animation-name: entradaFoto;
+    animation-duration: 0.55s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+.sobre .item.active .pss-information {
+    animation-delay: 0s;
+}
+.sobre ,.item.active .carrocel h3{
+    animation-delay: 0.12s;
+}
+.sobre ,.item.active .description{
+    animation-delay: 0.22s;
+}
+.sobre ,.item.active .information{
+    animation-delay: 0.34s;
+}
+section .lista .item{
+    position: static;}
 
 .pss-img{
     width: 45%;
@@ -544,7 +562,6 @@ section .lista .item{
     height: 420px;
     object-fit: contain;
     object-position: center bottom;}
-
 .carrocel{
     width: 55%;
     padding: 32px;
@@ -552,7 +569,8 @@ section .lista .item{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 18px;}
+    gap: 18px;
+    transition: all 0.3s;}
 .pss-information{
     padding: 6px 14px;
     border: 1px solid var(--verde);
@@ -562,7 +580,7 @@ section .lista .item{
     font-weight: bold ;}
 .carrocel h3{
     font-size: 48px;
-    line-height: 1.1px;}
+    line-height: 1.1;}
 .carrocel .description{
     color: var(--suave);
     font-size: 13px;
@@ -594,77 +612,54 @@ section .lista .item{
 }
 .indicators{
     gap: 24px;}
-section .lista::before{
-    content: '';
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    top: 50%;
-    border-top: 1px solid white;
-    display: none;}
-.indicators {
-    position: absolute;
-    left: 30px;
-    bottom: 30px;
+.pontos button{
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #647694;
+    cursor: pointer;
+}
+.pontos button.active{
+    background: var(--verde);}
+.arrows button{
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--borda);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--texto);
+    font-size: 24px;
+    cursor: pointer;}
 
-    height: auto;
-    width: auto;
-
+.equipe-nav{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;}
-section .indicators .number{
-    font-size: 3rem;}
-section .indicators ul{
-    display: flex;
-    gap: 10px;}
-section .indicators ul li{
-    width: 50px;
-    height: 50px;
-    background-color: #beff1b;
-    border-radius: 5px;
-    transition: 0.5s;}
-section .indicators ul .active{
-    background-color: white;}
-.lista{
-    --calculation: 1;}
-section .lista .item{
-    transform: translateX(calc(100vw * var(--calculation)));
-    transition: 0.5s;
-    opacity: 0;}
-.carrocel,
-.pss-information,
-section .lista .item h2,
-section .lista .item .description,
-section .lista .item .information {
-    transform: translateX(calc(200px * var(--calculation)));
-    transition: 0.7s;
-    transition-delay: 0.3s;
-    opacity: 0;}
-.carrocel h2{
-    transition-delay: 0.5s;
-    text-shadow: 1px 1px 3px black;}
-.description{
-    transition-delay: 0.7s;
-    text-shadow: 2px 2px 2px black;}
-.information{
-    transition-delay: 0.9s; }
-.information:hover{
-    box-shadow: 3px 1px 100px 10px rgb(208, 255, 0);}
-section .lista .item.active {
-    transform: translateX(0);
-    transition: 0.5s;
-    opacity: 1;}
-.carrocel,
-.pss-information,
-section .lista .item.active h2,
-section .lista .item.active .description,
-section .lista .item.active .information {
-    transform: translateX(0);
-    opacity: 1;}
-
-
+    gap: 12px;
+    margin-top: 20px;
+}
+.equipe-nav button{
+    flex: 1;
+    padding: 16px 12px;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    background: var(--vidro);
+    color: var(--texto);
+    font: inherit;
+    cursor: pointer;
+}
+.equipe-nav strong, .equipe-nav small{
+    display: block;}
+.equipe-nav small{
+    margin-top: 6px;
+    color: var(--suave);}
+.equipe-nav button.active{
+    border-color: var(--verde);
+    background: rgba(47, 212, 168, 0.612);
+}
+.sobre button:focus-visible{
+outline: 3px solid var(--azul);
+outline-offset: 4px;}
 /* No celular, a foto inteira fica acima do texto. */
 @media (max-width: 640px){
     .sobre{

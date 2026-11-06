@@ -477,7 +477,7 @@ ol{
     text-align: center;
 }
 .sobre-selo{
-    color: var(--verde);
+    color: rgb(45, 128, 187);
     font-weight: 600;
 }
 .titsobre{
@@ -490,8 +490,11 @@ ol{
 
 .painel-equipe{
     overflow: hidden;
-    background: #141d2b;
-    border: 1px solid var(--borda);
+    background: 
+        radial-gradient(ellipse at 15% 45%, rgba(126, 44,190,0.20), transparent 55%),
+        radial-gradient(ellipse at 95% 10%, rgba(64, 98, 210, 0.18), transparent 55%),
+        #101222;
+    border: 1px solid rgba(174, 155, 225, 0.25);
     border-radius: 24px;
 }
 
@@ -555,7 +558,7 @@ section .lista .item{
     align-items: flex-end;
     justify-content: center;
     padding: 24px 20px 0;
-    background: radial-gradient(circle, rgba(47, 212, 160, 0.20), transparent 70%);}
+    background: radial-gradient(circle, rgba(15, 159, 152, 0.138), transparent 70%);}
 .pss-img img{
     display: block;
     width: 100%;
@@ -573,9 +576,9 @@ section .lista .item{
     transition: all 0.3s;}
 .pss-information{
     padding: 6px 14px;
-    border: 1px solid var(--verde);
+    border: 1px solid rgb(84, 55, 131);
     border-radius: 20px;
-    color: var(--verde);
+    color: var(--suave);
     font-size: 14px;
     font-weight: bold ;}
 .carrocel h3{
@@ -590,7 +593,7 @@ section .lista .item{
     padding: 12px 24px;
     border: none;
     border-radius: 12px;
-    background: var(--verde);
+    background: linear-gradient(135deg, rgba(196, 156, 215, 0.879), rgba(15, 65, 115, 0.97));
     color: white;
     font: inherit;
     cursor: pointer;
@@ -613,8 +616,8 @@ section .lista .item{
 .indicators{
     gap: 24px;}
 .pontos button{
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
     padding: 0;
     border: none;
     border-radius: 50%;
@@ -661,50 +664,3 @@ section .lista .item{
 outline: 3px solid var(--azul);
 outline-offset: 4px;}
 /* No celular, a foto inteira fica acima do texto. */
-@media (max-width: 640px){
-    .sobre{
-        height: auto;
-        min-height: 0;
-        padding: 80px 0 110px;}
-    .sobre .titsobre{
-        width: 100%;
-        text-align: center;}
-    .sobre .lista .item.active{
-        position: relative;}
-    .sobre .pss-img{
-        position: relative;
-        top: auto;
-        bottom: auto;
-        left: auto;
-        width: 100%;
-        height: clamp(260px, 60vh, 420px);}
-    .sobre .carrocel{
-        position: relative;
-        width: 100%;
-        height: auto;
-        padding: 24px 28px 0;
-        align-items: center;
-        gap: 16px;
-        text-align: center;}
-    .sobre .carrocel h2{
-        font-size: clamp(1.8rem, 8vw, 2.5rem);}
-    .sobre .carrocel .description{
-        text-align: center;}
-    .sobre .arrows{
-        top: 260px;}
-    .sobre .indicators{
-        left: 50%;
-        bottom: 24px;
-        transform: translateX(-50%);
-        flex-direction: row;
-        align-items: center;}
-    .sobre .indicators .number{
-        font-size: 2rem;}
-    .sobre .indicators ul{
-        padding: 0;
-        list-style: none;}
-    .sobre .indicators ul li{
-        width: 22px;
-        height: 8px;}}
-@media (prefers-reduced-motion: reduce){
-    *{transition: none !important}}

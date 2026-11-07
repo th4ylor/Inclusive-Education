@@ -1,0 +1,126 @@
+body {
+    background-color: rgba(17, 8, 78, 0.96);
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.titulo {
+    color: rgb(206, 43, 206);
+    font-size: 40px;
+    text-align: left;
+    /*alinha o texto*/
+}
+
+.subtitulo {
+    color: lightgray;
+    font-size: 18px;
+}
+
+.area-postits {
+    width: 80%;
+    margin: 30px auto;
+    border-radius: 12px;
+    background-color: white;
+    padding: 20px;
+    min-height: 300px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.postit {
+    background-color: rgb(47, 175, 124);
+    width: 200px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.752);
+    transition: transform 0.2s;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.postit:hover {
+    transform: translateY(-5px);
+}
+
+.postit h3 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 0
+}
+
+.postit p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.formulario-postit {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.formulario-postit input,
+.formulario-postit textarea {
+    padding: 12px;
+    border: 1px solid #1f1e1e;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+#adicionar-postit {
+    background-color: rgb(3, 7, 245);
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    border: none; /* remove a borda padrão */
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#adicionar-postit:hover {
+    background-color: rgb(65, 105, 255);
+    transform: scale(1.05);
+}
+
+.botao-cor {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 50%; /*transforma o botão em círculo.*/
+    cursor: pointer;
+    margin: 4px;
+    transition: 0.2s;
+}
+
+.botao-cor:hover {
+    transform: scale(1.2);
+}   
+
+.rodape-postit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.botao-excluir {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-excluir:hover {
+    background-color: darkred;
+}

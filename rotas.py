@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, session, redirect, url_for, flash
+from flask import Blueprint, render_template, session, redirect, url_for, flash, Response
 from auth import fazer_login, fazerCadastro, loginObrigatorio
 from card import cardAtual, criarCard, acertoCard, randomCard
 
@@ -9,6 +9,27 @@ rotas_bp = Blueprint("rotas", __name__)
 @rotas_bp.route("/")
 def inicio():
     return render_template("index.html")
+
+@rotas_bp.route("/robots.txt", methods=["GET"])
+def robotsGoogle():
+    conteudo = (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "\n"
+        "Sitemap: https://senflow.duckdns.org/sitemap.xml\n"
+    )
+    return Response(conteudo, mimetype="text/plain")
+
+@rotas_bp.route("/sitemap.xml", methods=["GET"])
+def sitemapGoogle():
+    conteudo = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://senflow.duckdns.org/</loc>
+    </url>
+</urlset>
+"""
+    return Response(conteudo, mimetype="application/xml")
 
 
 #Carrega a pagina de login

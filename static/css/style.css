@@ -614,7 +614,7 @@ section .lista .item{
     cursor: pointer;
 }
 .pontos button.active{
-    background: var(--verde);}
+    background: #fff}
 .arrows button{
     width: 44px;
     height: 44px;
@@ -649,8 +649,8 @@ section .lista .item{
     margin-top: 6px;
     color: var(--suave);}
 .equipe-nav button.active{
-    border-color: var(--verde);
-    background: rgba(47, 212, 168, 0.612);
+    border-color: var(--borda);
+    background: rgba(47, 212, 80, 0.307);
 }
 .sobre button:focus-visible{
 outline: 3px solid var(--azul);

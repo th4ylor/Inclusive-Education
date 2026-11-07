@@ -22,11 +22,10 @@ __SITE QUE IREMOS USAR PRA HOSPEDAR: https://render.com__
 ALGUNS CODIGOS DE REQUISICAO HTTP MAIS COMUNS:
 Num     Significado             exemplo pra uso
 
-200     OK                      Card encontrado com sucesso
+200     OK                      Deu boa
 201     Created                 Usuario cadastrado com sucesso
 400     Bad Request             Requisicao com dados invalidos
 401     Unauthorized            Usuario não autenticado
-403     Forbidden               Usuario sem permissao
 404     Not Found               Card nao encontrado
 500     Internal Server Error   Erro interno no servidor
 

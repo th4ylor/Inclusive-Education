@@ -398,17 +398,6 @@ h1{
     letter-spacing: 0.08em;
     text-transform:uppercase;
     color: white;}
-.meta{
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;}
-.meta li{
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    background: rgba(255, 255, 255, .07);}
 details{
     padding-top: 14px;
     border-top: 1px solid var(--borda);}
@@ -635,6 +624,9 @@ section .lista .item{
     color: var(--texto);
     font-size: 24px;
     cursor: pointer;}
+.arrows button:hover{
+    background: var(--azul);
+}
 
 .equipe-nav{
     display: flex;

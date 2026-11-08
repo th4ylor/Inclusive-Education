@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <!--UTF-8: é um padrão de codificação que permite representar caracteres de vários idiomas.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Anotações</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/postit.css') }}">
+</head>
+
+<body>
+    <!-- CABEÇALHO -->
+   <header>
+    <h1 class="titulo">Post-Its</h1>
+
+    <p class="subtitulo">Organize suas ideias, disciplinas e tarefas em um só lugar.</p>
+
+    </header>
+    
+<main>
+    <!-- conteúdo principal da página -->
+    <h2>Minhas anotações</h2>
+
+<div class="formulario-postit">
+    
+    <input type="text" id="titulo-postit" placeholder="Título da anotação">
+
+    <textarea id="texto-postit" placeholder="Escreva sua anotação..."></textarea>
+
+    <button id="adicionar-postit">Adicionar Post-it</button>
+    
+</div>
+
+    <section class="area-postits">
+        
+    </section>
+</main>
+
+<script src="{{ url_for('static', filename='js/postit.js') }}"></script>
+
+</body>
+
+</html>
+
+
+
+<!--
+    rel="stylesheet": informa que o arquivo conectado é uma folha de estilos CSS.
+    href="css/style.css": indica onde está localizado o arquivo CSS.
+-->

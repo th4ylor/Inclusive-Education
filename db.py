@@ -33,6 +33,19 @@ def createTable():
                     ON DELETE CASCADE
             )
             """)
+
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS notas(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                usuario_id INTEGER NOT NULL,
+                titulo TEXT NOT NULL,
+                conteudo TEXT NOT NULL,
+                cor TEXT NOT NULL DEFAULT '#f6d73ef2',
+                FOREIGN KEY (usuario_id)
+                    REFERENCES usuarios(id)
+                    ON DELETE CASCADE
+            )
+        """)
         
         conn.commit()
     finally:
@@ -50,6 +63,24 @@ def salvarFlashcards(mat, per, resp):
             (id-usuario, materia, pergunta, resposta)
             VALUES (?, ?, ?, ?)
                     """, (usuario_id, mat, per, resp))
+        conn.commit()
+        return True
+    finally:
+        conn.close()
+
+def salvarNota(titulo, conteudo, cor):
+    usuario_id = session.get("usuario_id")
+
+    if not usuario_id:
+        return False
+
+    conn = openConnection()
+    try:
+        conn.execute("""
+            INSERT INTO notas (usuario_id, titulo, conteudo, cor)
+            VALUES (?, ?, ?, ?)
+        """, (usuario_id, titulo, conteudo, cor))
+
         conn.commit()
         return True
     finally:

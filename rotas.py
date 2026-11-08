@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, session, redirect, url_for, flash, Response
 from auth import fazer_login, fazerCadastro, loginObrigatorio
 from card import cardAtual, criarCard, acertoCard, randomCard
+from postit import listarNotas, criarNota, excluirNota, atualizarNota
 
 rotas_bp = Blueprint("rotas", __name__)
 
@@ -56,12 +57,38 @@ def Painel():
     
     
     
-#Rotas card
 @rotas_bp.route("/flashcards", methods=["GET"])
 @loginObrigatorio
 def flashcards():
     return render_template("home/flashCards.html")
 
+#rotas post- it
+@rotas_bp.route("/postit", methods=["GET"])
+@loginObrigatorio
+def postit():
+    return render_template("home/postit.html")
+
+@rotas_bp.route("/api/notas", methods=["GET"])
+@loginObrigatorio
+def apiListarNotas():
+    return listarNotas()
+
+@rotas_bp.route("/api/notas", methods=["POST"])
+@loginObrigatorio
+def apiCriarNota():
+    return criarNota()
+
+@rotas_bp.route("/api/notas/<int:nota_id>", methods=["DELETE"])
+@loginObrigatorio
+def apiExcluirNota(nota_id):
+    return excluirNota(nota_id)
+
+@rotas_bp.route("/api/notas/<int:nota_id>", methods=["PUT"])
+@loginObrigatorio
+def apiAtualizarNota(nota_id):
+    return atualizarNota(nota_id)
+
+#outras rotas flashcard
 @rotas_bp.route("/api/flashcards/atual", methods=["GET"])
 @loginObrigatorio
 def apiCardAtual():

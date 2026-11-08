@@ -47,3 +47,5 @@ prevButton.onclick = () => {
     else{
         mostrarIntegrante(active - 1)
 }}
+
+

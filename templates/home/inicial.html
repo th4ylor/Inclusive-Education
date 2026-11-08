@@ -11,94 +11,58 @@
 <body>
     <header > 
 
-            {% with mensagens = get_flashed_messages(with_categories=true)%}
-            {%for categoria,msg in mensagens%}
-                <p class="msg {{categoria}}">{{msg}}</p>
-            {% endfor %}
-            {% endwith %}
-
 <!-- titulo -->
 
         <div class = "titulo">
 
-            <h1>Seja bem-vindo ao  </h1>
-            <p> Senflow </p>
+            <h1><span class="destaque1">Senflow -</span> seu espaço para estudos</h1>
 
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, exercitationem itaque? Optio expedita nam ad aut, aliquam doloribus, tenetur quibusdam quidem neque molestiae voluptatum esse fuga velit tempora alias ullam!</h2>
-        </div>
-
-        <div class = "checklist">
-            <button>
-                <h1>Horas estudadas</h1>
-            </button>
-            
-            <button>
-                <h2>Metodolôgias utilizada</h2>
-            </button>
-
-            <button>
-                <h3>Dias consecutivos estudando</h3>
-            </button>
+            <h2>Vamos estudar <span class="destaque">no seu ritmo?</span>
+            <p>Escolha uma atividade, organize seu tempo e aprenda da maneira que funciona melhor para você.</p>
+            </h2>
 
         </div>
-
-<!-- Colocando imagem lateral e dark mode-->
-
-        <div class = "imagens_lateral">
-            <div class="olhos">
-                <button type = "button">
-                    <img src="https://img.icons8.com/?size=100&id=987&format=png&color=000000" alt="">
-                </button>
-            </div>
-
-            <div class = "usuario">
-                <button class = "submit">
-                    <img src="https://img.icons8.com/?size=100&id=83190&format=png&color=000000" alt="">
-                </button>
-            </div>
-        </div>
-    
 
 <!-- segundo titulo -->    
 <!-- Caixas que levarão para outros sites-->  
 
-    <div class = "titulo_2">        
-            <h1>O que vamos estudar agora?</h1>   
-        
-        <div class = "botoes_estudo">
+    <div class="titulo_2">
+        <h2>O que vamos estudar agora?</h2>
 
-            <button type="button" onclick="window.location.href='/estudo'">
-                <h2>Pomodoro > </h2>
-                <p>Bloco com cronômetro</p>
-            </button>
+        <div class="botoes_estudo">
 
-            <button type="button">
-                <h2>Tarefas > </h2>
-                <p>Lista no estilo Focus To-Do</p> 
-            </button>
+            <a class="card-estudo" href="/estudo">
+                <h3>Pomodoro</h3>
+                <p>Estude com intervalos.</p>
+            </a>
 
-            <button type="button" onclick="window.location.href='/estudo'">
-                <h3>Estudo em blocos > </h3>
-                <p>Periódos determinados de foco</p>
-            </button>
+            <a class="card-estudo" href="/estudo">
+                <h3>Tarefas</h3>
+                <p>Organize suas atividades.</p>
+            </a>
 
-            <button type="button" onclick="window.location.href='/estudo'">
-                <h4>Feynman > </h4>
-                <p>Explicação simples</p> 
-            </button>
+            <a class="card-estudo" href="/estudo">
+                <h3>Estudo em blocos</h3>
+                <p>Divida seu estudo em períodos.</p>
+            </a>
 
-            <button type="button" onclick="window.location.href='{{ url_for('rotas.flashcards')}}'"' >
-                <h5>FlashCards </h5>
-                <p>Rever conteúdo</p> 
-            </button>
+            <a class="card-estudo" href="/estudo">
+                <h3>Feynman</h3>
+                <p>Aprenda explicando.</p>
+            </a>
 
-            <button type="button">
-                <h6>Post-its > </h6>
-                <p>Marcação de texto</p>
-            </button>
+            <a class="card-estudo" href="{{ url_for('rotas.flashcards') }}">
+                <h3>FlashCards</h3>
+                <p>Revise o conteúdo.</p>
+            </a>
+
+            <a class="card-estudo" href="/estudo">
+                <h3>Post-its</h3>
+                <p>Marque informações importantes.</p>
+            </a>
 
         </div>
-    </div>  
+    </div>
 
     </header>
     

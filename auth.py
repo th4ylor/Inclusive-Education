@@ -45,7 +45,6 @@ def fazer_login():
     session.clear()
     session.permanent = True
     session["usuario_id"] = resultado["id"] # guarda quem está logado, o 0 aqui é para o id, se for 1  é para senha hash
-    flash("Login aceito", "sucesso")
     return redirect(url_for("rotas.painel"))
 
 #Isaak depois  vc tem que  conferir sobre o criar tabela, eu fiz uma função para ela e ela tem q puxar do  jeito q ta ali,

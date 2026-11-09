@@ -8,11 +8,7 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 100vh;
     width: 100vw;}
-h2 {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: 700;}
+
 button {
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;}
 .container {
@@ -39,12 +35,28 @@ button {
     justify-content: center;
     align-items: center;
     z-index: 1;}
+
+.textLogin{
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 10px;
+    h2{
+        margin: 0;
+    }
+    p{
+        color: #9aa3c7;
+    }
+}
 form{
     display: flex;
+    flex-direction: column;}
+.campo{
+    display: flex;
     flex-direction: column;
-    gap: 12px;}
+    gap: 4px;
+}
 input,button {
-    width: 320px;
+    width: 300px;
     padding: 12px 20px;
     border-radius: 12px;
     border: none;
@@ -63,7 +75,13 @@ input{
     color: rgba(255, 255, 255, .9);
     background: rgba(255, 255, 255, .1);}
 input::placeholder{
-    color: rgba(255, 255, 255, .5);}
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.291);}
+label{
+    color: #ffffffa3;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
 .facaLogin, .facaCadastro{
     position: absolute;
     h2, p{
@@ -128,7 +146,8 @@ input::placeholder{
     opacity: 0;}
 .formLogin{
     opacity: 0;
-    transition: all .5s .3;}
+    transition: all .5s .3;
+}
 .facaLogin{
     transition: all .3s 0;
     transform: translateX(-200%);
@@ -168,5 +187,8 @@ input::placeholder{
     background: #e0f5e5; 
     color: #1d6b32; }
 
-
-
+h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;}

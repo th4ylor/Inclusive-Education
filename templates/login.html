@@ -20,33 +20,53 @@
         <div class="card CadastroActive">
             <div class="esquerda">
                 <div class="formLogin">
-                    <h2>Fazer Login</h2>
+                    <div class="textLogin">
+                        <h2>Fazer Login</h2>
+                        <p>Continue seus estudos no seu ritmo.</p>
+                    </div>
                     <form action="/login" method="post">
-                        <input type="text" id="email" name="email" placeholder="E-Mail">
-                        <input type="password" id="pass" name="pass" placeholder="Senha">
+                        <div class="campo">
+                            <label for="email">E-Mail</label>
+                            <input type="text" id="email" name="email" placeholder="voce@exemplo.com">
+                        </div>
+                        <div class="campo">
+                            <label for="pass">Senha</label>
+                            <input type="password" id="pass" name="pass" placeholder="********">
+                        </div>
                         <button class="Botao" type="submit">Entrar</button>
                     </form>
                 </div>
                 <div class="facaLogin">
                     <h2>Ja tem<br>uma conta?</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia dolor voluptatum quisquam autem praesentium dignissimos tempora commodi rem non voluptatem quas ex dolorem soluta corrupti hic quos, dolore dicta. Maiores.</p>
+                    <p>Entre na sua conta e continue seus estudos no seu ritmo</p>
                     <button class="loginButton">Faça Login</button>
                 </div>
             </div>
             <div class="direita">
                 <div class="formCadastro">
-                    <h2>Cadastro</h2>
+                    <div class="textLogin">
+                        <h2>Crie sua conta</h2>
+                        <p>Um novo passo no seu ritmp.</p>
+                    </div>
                     <form action="/cadastro" method="post">
-                        <input type="text" name="nome" placeholder="Nome">
-                        <input type="text" name="email" placeholder="E-Mail">
-                        <input type="password" name="senha" placeholder="Senha">
-                        <input type="password" name="confSenha" placeholder="Confirme sua senha">
+                        <div class="campo">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" placeholder="Seu nome"></div>
+                        <div class="campo">
+                            <label for="email">E-Mail</label>
+                            <input type="text" name="email" placeholder="voce@exeplo.com"></div>
+                        <div class="campo">
+                            <label for="senha">Senha</label>
+                            <input type="password" name="senha" placeholder="********"></div>
+                        <div class="campo">
+                            <label for="confSenha">Confirme sua senha</label>
+                            <input type="password" name="confSenha" placeholder="********"></div>
                         <button class="Botao" type="submit">Cadastrar</button>
                     </form>
                 </div>
                 <div class="facaCadastro">
                     <h2>Não tem<br>uma conta?</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia dolor voluptatum quisquam autem praesentium dignissimos tempora commodi rem non voluptatem quas ex dolorem soluta corrupti hic quos, dolore dicta. Maiores.</p>
+                    <p>Crie uma conta e descubra um jeito de estudar que respeite seu ritmo</p>
                     <button class="cadastroButton">Cadastre-se</button>
                 </div>
             </div>

@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, session, redirect, url_for, flash,
 from auth import fazer_login, fazerCadastro, loginObrigatorio
 from card import cardAtual, criarCard, acertoCard, randomCard
 from postit import listarNotas, criarNota, excluirNota, atualizarNota
+from db import pegarUsuario
 
 rotas_bp = Blueprint("rotas", __name__)
 
@@ -52,7 +53,9 @@ def registerAuth():
 
 @rotas_bp.route("/painel", methods=["GET"])
 @loginObrigatorio
-def Painel():
+def painel():
+    usuario = pegarUsuario()
+    flash(usuario)
     return render_template("home/inicial.html")
     
     

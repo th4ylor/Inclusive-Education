@@ -20,8 +20,27 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
 }
+.topbar::before{
+    content: " ";
+    background: #fff;
+    width: 3px;
+    height: 30px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+.topbar{
+    gap: 24px;
+    background: linear-gradient(135deg, rgba(5, 109, 174, 0.253), rgba(33, 31, 86, 0.303));
+    display: flex;
+    border-radius: 23px;
+    max-width: 300px;
+    align-items: center;
+    letter-spacing: 1px;
+    color: white;
+    margin: 10px 20px;
+    z-index: 999;
+    padding: 20px 24px;}
 
 /* TÍTULO PRINCIPAL */
 .titulo {

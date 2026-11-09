@@ -11,13 +11,20 @@
 </head>
 <body>
     <header > 
+        <div class="topbar">
+            {% with usuario = get_flashed_messages(with_categories=true)%}
+                {% for categoria,msg in usuario %}
+                    <span> <strong>Olá {{msg}}!</strong><br> <small>Que bom ter você por aqui.</small> </span>
+                {% endfor %}
+            {% endwith %}
+        </div>
+            
 
 <!-- titulo -->
 
         <div class = "titulo">
 
             <h1><span class="destaque1">Senflow -</span> seu espaço para estudos</h1>
-
             <h2>Vamos estudar <span class="destaque">no seu ritmo?</span>
             <p>Escolha uma atividade, organize seu tempo e aprenda da maneira que funciona melhor para você.</p>
             </h2>

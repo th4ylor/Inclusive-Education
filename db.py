@@ -85,3 +85,18 @@ def salvarNota(titulo, conteudo, cor):
         return True
     finally:
         conn.close()
+        
+def pegarUsuario():
+    usuario_id = session.get("usuario_id")
+    if not usuario_id:
+        return False
+    
+    conn = openConnection()
+    try:
+        usuario = conn.execute("SELECT nome FROM usuarios WHERE id = ?", (usuario_id,)).fetchone()
+        return usuario['nome']
+    finally:
+        conn.close()
+        
+        
+    

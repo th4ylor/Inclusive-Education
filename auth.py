@@ -4,6 +4,7 @@ import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 
+
 def loginObrigatorio(funcao):
     @wraps(funcao)
     def verificarLogin(*args, **kwargs):

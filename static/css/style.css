@@ -654,5 +654,4 @@ section .lista .item{
 .sobre button:focus-visible{
 outline: 3px solid var(--azul);
 outline-offset: 4px;}
-/* No celular, a foto inteira fica acima do texto. */
 

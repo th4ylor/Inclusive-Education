@@ -45,9 +45,19 @@
 
         <div class="botoes_estudo">
 
-            <a class="card-estudo" href="/estudo">
+            <a class="card-estudo" href="{{url_for('metodologias.pagina_estudo')}}">
                 <h3>Pomodoro</h3>
                 <p>Estude com intervalos.</p>
+            </a>
+
+            <a class="card-estudo" href="{{ url_for('rotas.flashcards') }}">
+                <h3>FlashCards</h3>
+                <p>Revise o conteúdo.</p>
+            </a>
+
+            <a class="card-estudo" href="{{ url_for('rotas.postit') }}">
+                <h3>Post-its</h3>
+                <p>Marque informações importantes.</p>
             </a>
 
             <a class="card-estudo" href="/estudo">
@@ -65,15 +75,6 @@
                 <p>Aprenda explicando.</p>
             </a>
 
-            <a class="card-estudo" href="{{ url_for('rotas.flashcards') }}">
-                <h3>FlashCards</h3>
-                <p>Revise o conteúdo.</p>
-            </a>
-
-            <a class="card-estudo" href="/estudo">
-                <h3>Post-its</h3>
-                <p>Marque informações importantes.</p>
-            </a>
 
         </div>
     </div>

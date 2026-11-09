@@ -5,7 +5,6 @@ o comando "python app.py". Ele vai retornar uma URL, só copiar a URL no navegad
 Posteriormente todas as chamadas para o banco de dados vao ser migradas do sqlite para o PostgreeSQl, só assim pra hospedar direito no Render. Recomendo que qualquer codigo SQL seja feito como funcao no arquivo "db.py" pra facilitar a manutenção.
 
 
-
 IDEIA DE NOME:
 ___SENFLOW___
 Sen de Sensus do latim relacionado a sentido, percepcao, sensacao, consciencia
@@ -28,7 +27,6 @@ Num     Significado             exemplo pra uso
 401     Unauthorized            Usuario não autenticado
 404     Not Found               Card nao encontrado
 500     Internal Server Error   Erro interno no servidor
-
 
 
 MENSAGEM PADRAO PRA COMMITS:

@@ -203,3 +203,65 @@ header{
 }
 
 
+
+/* DESCRIÇÃO DAS METODOLOGIAS */
+
+.descricao-metodologias {
+    max-width: 1000px;
+    margin: 40px auto 80px;
+    padding: 40px 20px;
+}
+
+.descricao-metodologias h2 {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.subtitulo-descricao {
+    text-align: center;
+    color: #a9c2cc;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+.lista-metodologias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.metodologia {
+    background-color: rgba(6, 44, 58, 0.90);
+    border: 1px solid #426a7a;
+    border-radius: 15px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.metodologia:hover {
+    transform: translateY(-4px);
+    border-color: #8bbbd0;
+    background-color: #10485a;
+}
+
+.metodologia h3 {
+    color: #70b9d8;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.metodologia p {
+    color: #b8d5df;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+    .lista-metodologias {
+        grid-template-columns: 1fr;
+    }
+}

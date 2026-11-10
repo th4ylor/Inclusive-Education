@@ -105,7 +105,7 @@ h2{
     align-items: start;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
-    max-width: 80vw;
+    ;
     gap: 48px;
     padding: 72px 24px 40px;
     margin: 0 auto;}
@@ -304,4 +304,34 @@ h2{
             font-size: 1.85rem;  
             color: #d4d4d4d1;
             text-align:center;}}
+
+
+@media (max-width: 900px){
+    body > section{
+        width: 80%;
+        margin-inline: auto;
+    }
+    .hero{
+        max-width: 100%;
+        flex-direction: column;
+        gap: 20px;
+        grid-template-columns: 1fr;
+
+    }
+    .avisoCard img{
+    display: block;
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    margin: 10px auto 0;
+    }
+    .flip{
+        margin: auto;}
+        .flipInner{
+            height: 350px;}
+    .inicio, .inicio p{
+        max-width: 100%;
+    }
+
+}
 

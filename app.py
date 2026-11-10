@@ -16,8 +16,5 @@ app.config.update(
     PERMANENT_SESSION_LIFETIME = timedelta(hours = 2)
 )
 
-<<<<<<< HEAD
 createTable()
-=======
-createTable()
->>>>>>> ddc0a1d2551b09c13369f983a6c36d79bad97ad1
+

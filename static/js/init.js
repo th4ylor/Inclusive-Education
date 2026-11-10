@@ -29,7 +29,7 @@ function mostrarIntegrante(newPosition){
 }
 
 nextButton.onclick = () => {
-    list.style.setProperty('--calculation', -1)
+    list.style.setProperty('--calculation', 1)
 
     if (active == itens.length - 1) {
         mostrarIntegrante(0)
@@ -39,7 +39,7 @@ nextButton.onclick = () => {
 }}
 
 prevButton.onclick = () => {
-    list.style.setProperty('--calculation', 1)
+    list.style.setProperty('--calculation', -1)
 
     if (active == 0) {
         mostrarIntegrante(itens.length - 1)

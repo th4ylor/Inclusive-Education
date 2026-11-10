@@ -15,7 +15,7 @@ cadastroButton.onclick = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const msg = document.querySelector(".msg")
-    if (msg.classList.contains("sucesso")){
+    if (msg && msg.classList.contains("sucesso")){
         card.classList.remove("CadastroActive")
         card.classList.add("LoginActive")
     }

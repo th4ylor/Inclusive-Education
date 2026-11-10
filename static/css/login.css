@@ -219,3 +219,46 @@ h2 {
     margin-bottom: 20px;
     font-weight: 700;}
 
+
+
+
+    
+/*Responsa */
+
+@media (max-width: 760px){
+    body{
+        width: 100%;
+        height: auto;
+        overflow: auto;}
+    .container{
+        width: 100%;}
+    .card{
+        flex-direction: column;
+        height: auto;
+        min-height: 100dvh;
+        padding: 100px 20px 32px;
+        gap: 24px;}
+    .card::after{
+        display: none;}
+    .esquerda, .direita{
+        width: 100%;
+        max-width: 360px;}
+    .formLogin, .formCadastro, .facaLogin, .facaCadastro{
+        width: 100%;}
+    .card .facaLogin, .card .facaCadastro{
+        position: static;
+        transform: none;}
+    .card input, .card button, .card p{
+        width: 100%;}
+    .card .facaLogin h2, .card .facaLogin p, .card .facaCadastro h2, .card .facaCadastro p{
+        display: none;
+    }
+    .card.CadastroActive .direita{
+        order: -1;}
+    .card.LoginActive .formCadastro,
+.card.LoginActive .facaLogin,
+.card.CadastroActive .formLogin,
+.card.CadastroActive .facaCadastro {
+    display: none;
+}
+}

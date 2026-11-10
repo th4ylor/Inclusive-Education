@@ -455,7 +455,7 @@ ol{
      span:hover{
         transform: translateY(-20%) scale(1.04);
         transition: all 0.3s;
-    }}
+}}
 
 /* Sessao Sobre*/
 .sobre{
@@ -656,3 +656,60 @@ section .lista .item{
 outline: 3px solid var(--azul);
 outline-offset: 4px;}
 
+
+/*Responsa*/
+
+:root{
+    --lagura-conteudo: 75rem;
+    --margem-lateral: clamp(1rem, 3vw, 2rem)}
+
+@media (max-width: 760px){
+    ::before, ::after{
+    box-sizing: border-box;}
+    h1{
+        font-size: 2.2rem;}
+    .body{
+        display: flex;
+        align-items: center;
+        justify-content: center;}
+    img, video{
+        max-width: 100%;}
+    .inicio{
+    display: grid;}
+    .navbar{
+        display: none;}
+    .hero .subtitulo{
+        display: block;
+        width: 100%;
+        max-width: none;}
+    .container-sf{
+        width: 90%;
+        max-width: var(--lagura-conteudo);
+        grid-template-columns: 1fr;
+        margin-inline: auto;
+        padding-inline: 0;}
+    .rotina{h2{font-size: 22px;}}
+    .passos{
+        flex-direction: column;
+        gap: 2px;}
+    }
+
+/*Responsividade so p carrocel*/
+@media (max-width: 900px ){
+    .sobre .item.active{
+        flex-direction: column;}
+    .sobre .pss-img, .sobre .carrocel{
+        width: 100%;
+        padding: 16px;}
+    .sobre .pss-img img{
+        height: 240px;}
+    .sobre .carrocel h3{
+        font-size: 28px;}
+    .sobre .equipe-nav{
+        flex-direction: column;}
+    .sobre .information{
+        max-width: none;
+        display: block;
+        justify-content: center;
+        align-items: center;}
+}

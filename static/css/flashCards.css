@@ -173,9 +173,6 @@ h2{
 .sessao article small{  
     font-size: .75rem;
     color: var(--suave);}
-.acertos{color: rgb(161, 255, 164);}
-.quase{color: rgb(240, 255, 128);}
-.erros{color: rgb(255, 144, 144);}
 .newFlash{
     display: grid;
     margin-top: 20px;
@@ -224,39 +221,29 @@ h2{
     border-radius: var(--raio);
     background: var(--vidro);
     border: 1px solid var(--borda);
-    min-height: 50px;
+    min-height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
     letter-spacing: 0.1em;
     font-size: .75rem;
-    width: 100%;
+    width: 95%;
     color: #fff;
     text-shadow: 3px 3px 8px #000;
+    transition: all 0.1s;
     cursor: pointer;}
 .card:hover{
     transform: scale(1.1);}
-.Acerto {
-    background: rgba(190, 255, 184, 0.604);
+.Acerto:hover {
+    background: linear-gradient(135deg,rgba(215, 255, 225, 0.34), rgba(58, 113, 89, 0.413));
     border: 1px solid #2c2c2c24;
-    box-shadow:
-        0 0 5px #35ff6852,
-        0 0 10px rgba(53, 255, 104, 0.157),
-        0 0 20px rgba(53, 255, 104, 0.191);}
-.Quase{
-    background: rgba(255, 248, 185, 0.604);
-        box-shadow:
-        0 0 5px #ffda3539,
-        0 0 10px rgba(231, 255, 53, 0.196),
-        0 0 20px rgba(255, 201, 53, 0.274);
+}
+.Quase:hover{
+    background: linear-gradient(135deg,rgba(252, 255, 160, 0.423), rgba(113, 94, 58, 0.413));
     border: 1px solid #2c2c2c24;}
-.Erro{
-    background: rgba(255, 150, 150, 0.652);
-        box-shadow:
-        0 0 5px #ff353545,
-        0 0 10px rgba(255, 53, 53, 0.372),
-        0 0 20px rgba(255, 53, 53, 0.226);
+.Erro:hover{
+    background: linear-gradient(135deg,rgba(255, 160, 160, 0.423), rgba(113, 58, 58, 0.413));
     border: 1px solid #2c2c2c24;}
 .cardaut{
     display: flex;
@@ -265,6 +252,7 @@ h2{
     margin-top: 12px;
     padding: 20px;
     border-radius: var(--raio);
+
     background: var(--vidro);}
 .cardaut button{
     padding: 12px;
@@ -316,3 +304,4 @@ h2{
             font-size: 1.85rem;  
             color: #d4d4d4d1;
             text-align:center;}}
+

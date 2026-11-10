@@ -9,6 +9,7 @@
     <link rel="icon" href="{{url_for('static', filename='img/ico.png')}}" ></link>
 </head>
 <body>
+    
     <section class="container">
 
             {% with mensagens = get_flashed_messages(with_categories=true)%}
@@ -17,6 +18,11 @@
                 {% endfor %}
             {% endwith %}
 
+        <header class="marca">
+            <img src="../static/img/ico.png" alt="">
+            <strong>SenFlow</strong>
+        </header>
+        
         <div class="card CadastroActive">
             <div class="esquerda">
                 <div class="formLogin">

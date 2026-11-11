@@ -1,8 +1,11 @@
+*{
+    text-decoration: none;
+}
+
 body {
     background-color: rgba(17, 8, 78, 0.96);
     color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .titulo {

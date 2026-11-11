@@ -65,14 +65,12 @@ a{
 
 /*Parte do texto*/
 .inicio{
-    display: grid;
     max-width: 80vw;
     gap: 48px;
     align-items: center;
     padding: 22px 24px 20px;
     margin: 0 auto;}
 .inicio p{
-    max-width: 30vw;
     margin: 20px 0 30px;
     color: var(--suave);}
 .selo{
@@ -308,7 +306,7 @@ h2{
 
 @media (max-width: 900px){
     body > section{
-        width: 80%;
+        width: 90%;
         margin-inline: auto;
     }
     .hero{
@@ -320,7 +318,7 @@ h2{
     }
     .avisoCard img{
     display: block;
-    width: 90%;
+    width: 96%;
     max-width: 300px;
     height: auto;
     margin: 10px auto 0;
@@ -329,9 +327,10 @@ h2{
         margin: auto;}
         .flipInner{
             height: 350px;}
-    .inicio, .inicio p{
-        max-width: 100%;
-    }
-
-}
+    .textoInicial{
+        h2{
+            font-size: 1.9rem;}
+        p{
+            max-width: none;;}
+        }}
 

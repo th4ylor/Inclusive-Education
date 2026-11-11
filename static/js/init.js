@@ -9,7 +9,6 @@ let dots = indicators.querySelectorAll('.pontos button')
 let btnEquipe = container.querySelectorAll(".equipe-nav button")
 let number = container.querySelector(".number")
 let list = container.querySelector('.lista')
-let section = document.querySelector('section')
 
 let active = 0
 
@@ -47,5 +46,4 @@ prevButton.onclick = () => {
     else{
         mostrarIntegrante(active - 1)
 }}
-
 

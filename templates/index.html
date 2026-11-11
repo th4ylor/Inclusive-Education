@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SenFlow</title>
     <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="../static/css/responsivo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -17,8 +16,8 @@
 <body>
 
     <header class="topbar container-sf">
-        <a class="logo" href="#">
-            <span class="logoIconInative"> </span>
+        <a class="logo">
+            <span class="logoIcon"><img src="{{url_for("static", filename='img/ico.png')}}" alt=""></span>
             <span> <strong>SenFlow</strong> <small>Educação Inclusiva</small> </span>
         </a> 
 
@@ -27,7 +26,7 @@
             <a href="#metodologias">Metodologias</a>
             <a href="#sobre">Sobre</a>
         </nav>
-        <a class="btnEntrar" href="#">Entrar</a>
+        <button type="button" class="btnEntrar" id="Entrarbtn" onclick="window.location.href='/loginPage?modo=login'">Entrar</button>
 
     </header>
 
@@ -41,7 +40,7 @@
                 <p class="subtitulo">Escolha um método de estudo, organize suas anotações e revise com flashcards.<br> O SenFlow reúne ferramentas para você experimentar diferentes formas de começar e continuar estudando.</p>
         
                 <div class="btn">
-                    <button class="btn-prim" onclick="window.location.href='/loginPage'" >Comece agora</button>
+                    <button class="btn-prim" onclick="window.location.href='/loginPage?modo=cadastro'" >Comece agora</button>
                     <a href="https://github.com/th4ylor"><button class="btn-sec">Saiba mais</button></a>
                 </div>
             </div>

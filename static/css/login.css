@@ -8,20 +8,20 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 100vh;
     overflow: hidden;
-    width: 100vw;}
+    width: 100vw;
+    }
 
 .marca{
     position: absolute;
     top: 24px;
     left: 24px;
-    color: black;
     letter-spacing: 1px;
-    font-weight: 600;
     background: radial-gradient(circle, rgba(233, 252, 255, 0.281), rgba(215, 248, 255, 0.346));
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 0;
+    text-decoration: none;
     z-index: 3;
     padding: 12px;
     border-radius: 20px;
@@ -29,6 +29,14 @@ body {
     height: 50px;
     border: 1px solid rgba(0, 0, 0, 0.153);
     box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.201);
+}
+.corText{
+    color: rgb(0, 0, 0);
+    transition: all 0.3s;
+}
+.corText.Xactive{
+    color: rgba(233, 247, 255, 0.683);
+    transition: all 0.3s;
 }
 
 button {

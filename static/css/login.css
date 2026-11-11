@@ -28,17 +28,13 @@ body {
     width: 150px ;
     height: 50px;
     border: 1px solid rgba(0, 0, 0, 0.153);
-    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.201);
-}
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.201);}
 .corText{
     color: rgb(0, 0, 0);
-    transition: all 0.3s;
-}
+    transition: all 0.3s;}
 .corText.Xactive{
     color: rgba(233, 247, 255, 0.683);
-    transition: all 0.3s;
-}
-
+    transition: all 0.3s;}
 button {
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;}
 .container {

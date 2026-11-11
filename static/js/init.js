@@ -24,15 +24,13 @@ function mostrarIntegrante(newPosition){
     dots[active].classList.add('active')
     btnEquipe[active].classList.add('active')
 
-    number.textContent = (active + 1) + ' / ' + itens.length
-}
+    number.textContent = (active + 1) + ' / ' + itens.length}
 
 nextButton.onclick = () => {
     list.style.setProperty('--calculation', 1)
 
     if (active == itens.length - 1) {
-        mostrarIntegrante(0)
-    }
+        mostrarIntegrante(0)}
     else{
         mostrarIntegrante(active + 1)
 }}
@@ -41,8 +39,7 @@ prevButton.onclick = () => {
     list.style.setProperty('--calculation', -1)
 
     if (active == 0) {
-        mostrarIntegrante(itens.length - 1)
-    }
+        mostrarIntegrante(itens.length - 1)}
     else{
         mostrarIntegrante(active - 1)
 }}

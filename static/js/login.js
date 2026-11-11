@@ -6,14 +6,11 @@ let text = document.querySelector(".corText")
 function activeLogin() {
     card.classList.remove("CadastroActive")
     card.classList.add("LoginActive")
-    text.classList.add("Xactive")
-
-}
+    text.classList.add("Xactive")}
 function activeCadastro(){
     card.classList.remove("LoginActive")
     card.classList.add("CadastroActive")
-    text.classList.remove("Xactive")
-}
+    text.classList.remove("Xactive")}
 loginButoon.addEventListener("click", activeLogin)
 cadastroButton.addEventListener("click", activeCadastro)
 
@@ -23,21 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const modo = parametros.get("modo")
     if (modo === "login"){
         activeLogin()
-
     }else{
-        activeCadastro()
-    }
-
+        activeCadastro()}
     if (msg && msg.classList.contains("sucesso")){
         card.classList.remove("CadastroActive")
-        card.classList.add("LoginActive")
-    }
+        card.classList.add("LoginActive")}
     if (msg){
         setTimeout(() =>{
             msg.classList.add("show")
         },100)
         setTimeout(() => {
             msg.classList.remove("show")
-        },3000)
-    }
+        },3000)}
 })

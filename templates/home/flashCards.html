@@ -58,7 +58,11 @@
                         </article>
                     </section>
                     <section class="cardaut">
-                        <button type="submit">Gerar Cards com IA</button>
+                        <form action="/ler-pdf" method="POST" id="arquivo">
+                            <label for="arquivo">Selecione um PDF</label>
+                            <input type="file" name="arquivo" accept=".pdf,application/pdf" required>
+                            <button type="submit">Gerar Cards com IA</button>
+                        </form>
                     </section>
                     <section class="newFlash">
                         <form id="formCard" >

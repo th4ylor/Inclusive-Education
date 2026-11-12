@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, session, redirect, url_for, flash, Response
 from auth import fazer_login, fazerCadastro, loginObrigatorio
-from card import cardAtual, criarCard, acertoCard, randomCard
+from card import cardAtual, criarCard, acertoCard, randomCard, leitorPDF
 from postit import listarNotas, criarNota, excluirNota, atualizarNota
 from db import pegarUsuario
 
@@ -117,3 +117,7 @@ def logout():
     session.clear()
     flash("Sessão encerada com sucesso.", "sucesso")
     return redirect(url_for("rotas.loginPage"))
+
+@rotas_bp.route("/api/flashcards/pdf", methods=["POST"])
+def cardpdf():
+    return leitorPDF()

@@ -4,6 +4,7 @@ const botaoAcerto = document.getElementById("acertei")
 const parag = document.getElementById("parag")
 const quase = document.getElementById("quase")
 const errei = document.getElementById("errei")
+const arquivo = document.getElementById("arquivo")
 let acerto = 0
 let erro = 0
 let quaseX = 0
@@ -14,8 +15,7 @@ function mostrarmensagem(texto, tipo){
     if (texto == "" || tipo == ""){
         parag.innerHTML= ""
         console.log("deu ERRADO")
-        return   
-    }
+        return}
     const mensagem = document.createElement("p")
         mensagem.textContent = texto
         mensagem.className = `msg ${tipo}`
@@ -28,8 +28,7 @@ function mostrarmensagem(texto, tipo){
         setTimeout(() => {
             mensagem.classList.remove("show")
             setTimeout(() => mensagem.remove(), 200)
-        }, 4000)
-}
+        }, 4000)}
 
 
 function criarFace(classe, idText, rotulo, materia, text, dica){
@@ -48,8 +47,7 @@ function criarFace(classe, idText, rotulo, materia, text, dica){
     span.textContent = dica
 
     face.append(small, h3, span)
-    return face
-}
+    return face}
 
 
 function renderCard(card){
@@ -59,6 +57,7 @@ function renderCard(card){
     areaCard.replaceChildren()
 
     if (!card){
+        console.log("Veio card nenhuum")
         const aviso = document.createElement("div")
         aviso.className = "avisoCard"
         aviso.innerHTML= `
@@ -68,56 +67,46 @@ function renderCard(card){
         botaoAcerto.hidden = true
         quase.hidden = true
         errei.hidden = true
-        return
-    }
+        return}
 
     let flip = document.createElement("div")
     flip.className = "flipInner"
     flip.append(
         criarFace(" Frente", "perguntaC", "PERGUNTA", card.materia, card.pergunta, "Passe o mouse para virar ->"),
-        criarFace(" Verso", "respostaC", "RESPOSTA", card.materia, card.resposta, "<- Passe o mouse para voltar ")
-    )
+        criarFace(" Verso", "respostaC", "RESPOSTA", card.materia, card.resposta, "<- Passe o mouse para voltar "))
     areaCard.appendChild(flip)
     botaoAcerto.hidden = false
     quase.hidden = false
-    errei.hidden = false
-}
-
+    errei.hidden = false}
 
 async function loadCardAtual(){
     const resposta = await fetch("/api/flashcards/atual")
     const dados = await resposta.json()
     console.log("Esse é o LoadCard" + dados)
-    renderCard(dados.card)
-}
-
+    renderCard(dados.card)}
 
 formCard.addEventListener("submit", async (e) => {
     e.preventDefault()
     let newCard = {
         materia: document.getElementById("materia").value,
         pergunta: document.getElementById("pergunta").value,
-        resposta: document.getElementById("resposta").value
-    }
+        resposta: document.getElementById("resposta").value}
     try{
         const resposta = await fetch("/api/flashcards", {
             method: "POST",
             headers: {"Content-Type": "application/json" },
-            body: JSON.stringify(newCard)
-        })
+            body: JSON.stringify(newCard)})
         let dados = await resposta.json()
         if (!resposta.ok){
             mostrarmensagem(dados.erro, "erro")
-            return
-        }
+            return}
         mostrarmensagem("Card adicionado", "sucesso")
         formCard.reset()
         renderCard(dados.card)
     }catch (erro) {
         mostrarmensagem("Erro ao conectar com  Python", "erro")
         return
-    }
-})
+}})
 
 //Acoes dos botoes de Acerto, Quase e erro
 botaoAcerto.addEventListener("click", async () => {
@@ -125,27 +114,49 @@ botaoAcerto.addEventListener("click", async () => {
     const dados = await resposta.json()
     const innerAcerto  = document.getElementById("numeroAcerto")
     acerto = addCount(innerAcerto, acerto )
-    renderCard(dados.card)
-})
+    renderCard(dados.card)})
 quase.addEventListener("click", async () => {
     const resposta = await fetch("/api/flashcards/2", {method: "PATCH"})
     const dados = await resposta.json()
     const innerQuase = document.getElementById("numeroQuase")
     quaseX = addCount(innerQuase, quaseX )
-    renderCard(dados.card)  
-})
+    renderCard(dados.card)})
 errei.addEventListener("click", async () => {
     const resposta = await fetch("/api/flashcards/2", {method: "PATCH"})
     const dados = await resposta.json()
     const innerErro = document.getElementById("numeroErro")
     erro = addCount(innerErro, erro )
-    renderCard(dados.card)
-})
+    renderCard(dados.card)})
 
 function addCount(html,num){
     num = num + 1
     html.innerHTML = `<h3>${num}</h3>`
-    return num
-}
+    return num}
+
+arquivo.addEventListener("submit", async(evento) => {
+    evento.preventDefault()
+    const botao = arquivo.querySelector("button")
+    const textoOriginal = botao.textContent
+
+    const dados = new FormData(arquivo)
+    botao.disabled = true
+    botao.textContent = "Enviando o PDF..."
+    try{
+        const resposta = await fetch("/api/flashcards/pdf", {
+        method: "POST",
+        body: dados
+        })
+        const resultado = await resposta.json()
+        renderCard(resultado.card)
+
+    } catch (erro){
+        mostrarmensagem(erro.message, "erro")
+    }finally{
+        botao.disabled = false
+        botao.textContent = textoOriginal
+    }
+
+})
+
 
 loadCardAtual()

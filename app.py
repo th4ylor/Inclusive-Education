@@ -17,3 +17,5 @@ app.config.update(
 )
 
 createTable()
+
+app.run(debug=True)

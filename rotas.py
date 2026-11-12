@@ -119,5 +119,6 @@ def logout():
     return redirect(url_for("rotas.loginPage"))
 
 @rotas_bp.route("/api/flashcards/pdf", methods=["POST"])
+@loginObrigatorio
 def cardpdf():
     return leitorPDF()

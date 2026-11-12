@@ -1,7 +1,7 @@
 :root {
   --texto: #eef0ff;
   --suave: #9aa3c7;
-  --azul: #94c8ff;
+  --azul: #daecff;
   --vidro: rgba(255, 255, 255, .06);
   --borda: rgba(255, 255, 255, .12);
   --raio: 24px;}
@@ -118,7 +118,7 @@ h2{
     height: 100%;
     width: 100%;
 }
-.flip:hover .flipInner, .flip:focus-visible .flipInner, .flip.virado .flipInner{
+.flip.virado .flipInner{
     transform: rotateY(180deg);
 }
 .face{

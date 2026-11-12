@@ -55,9 +55,10 @@ function renderCard(card){
     console.log("valor do Quase " + quaseX)
     console.log("valor do Errei " + erro)
     areaCard.replaceChildren()
+    areaCard.classList.remove("virado")
 
     if (!card){
-        console.log("Veio card nenhuum")
+        console.log("Veio")
         const aviso = document.createElement("div")
         aviso.className = "avisoCard"
         aviso.innerHTML= `
@@ -147,7 +148,7 @@ arquivo.addEventListener("submit", async(evento) => {
         body: dados
         })
         const resultado = await resposta.json()
-        renderCard(resultado.card)
+        renderCard(resultado)
 
     } catch (erro){
         mostrarmensagem(erro.message, "erro")
@@ -158,5 +159,8 @@ arquivo.addEventListener("submit", async(evento) => {
 
 })
 
+areaCard.addEventListener("click", () => {
+    areaCard.classList.toggle("virado")
+})
 
 loadCardAtual()

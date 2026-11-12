@@ -19,8 +19,9 @@ def cardAtual():
         return randomCard()
     return jsonify({"card": dict(resultado)})
     
-def criarCard():
-    dados = request.get_json(silent=True) or {}
+def criarCard(dados = None):
+    if dados is None:
+        dados = request.get_json(silent=True) or {}
     
     materia = (dados.get("materia") or "").strip().upper() or "GERAL"
     pergunta = (dados.get("pergunta") or "").strip()   
@@ -132,7 +133,15 @@ def leitorPDF():
             #print(f"Pagina {numero}: {texto}", flush=True)
             textos.append(texto)
     textoCompleto = "\n".join(textos)
-    flash = textoIA(textoCompleto)
-    return jsonify({"card":flash})
+    card = textoIA(textoCompleto)
+    
+    criar = {
+        "materia": card["materia"],
+        "pergunta": card["pergunta"],
+        "resposta": card["resposta"]
+    }
+    criarCard(criar)
+    
+    return jsonify({"card":card})
 
 

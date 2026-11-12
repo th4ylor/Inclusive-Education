@@ -143,12 +143,12 @@ arquivo.addEventListener("submit", async(evento) => {
     botao.disabled = true
     botao.textContent = "Enviando o PDF..."
     try{
-        const resposta = await fetch("/api/flashcards/pdf", {
+        let resposta = await fetch("/api/flashcards/pdf", {
         method: "POST",
         body: dados
         })
-        const resultado = await resposta.json()
-        renderCard(resultado)
+        let resultado = await resposta.json()
+        renderCard(resultado.card)
 
     } catch (erro){
         mostrarmensagem(erro.message, "erro")

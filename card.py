@@ -140,8 +140,8 @@ def leitorPDF():
         "pergunta": card["pergunta"],
         "resposta": card["resposta"]
     }
-    criarCard(criar)
+   
     
-    return jsonify({"card":card})
+    return criarCard(criar)
 
 

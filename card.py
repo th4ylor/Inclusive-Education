@@ -96,7 +96,7 @@ def textoIA(texto):
     )
     resposta = client.responses.create(
         model="openai/gpt-oss-20b",
-        instructions=("Extraia conteúdos do texto. O intuito é criar um flashcard com pergunta e resposta sobre o tema afins de estudo"),
+        instructions=("Extraia conteúdos do texto. O intuito é criar um flashcard com pergunta e resposta sobre os temas abordados, para facilitar o estudo e a revisao do conteudo"),
         input= texto,
         text={
             "format": {
@@ -128,7 +128,7 @@ def leitorPDF():
     textos = []
     
     with pymupdf.open(stream=pdf.read(), filetype="pdf") as documento:
-        for numero,pagina in enumerate(documento,start=1):
+        for pagina in documento:
             texto = pagina.get_text()
             #print(f"Pagina {numero}: {texto}", flush=True)
             textos.append(texto)
@@ -140,8 +140,6 @@ def leitorPDF():
         "pergunta": card["pergunta"],
         "resposta": card["resposta"]
     }
-   
-    
     return criarCard(criar)
 
 

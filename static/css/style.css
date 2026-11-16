@@ -11,6 +11,7 @@
 
 *{
     box-sizing: border-box;
+    scroll-behavior: smooth;
     margin: 0;}
 body{
     font-family: 'Poppins', system-ui, sans-serif;
